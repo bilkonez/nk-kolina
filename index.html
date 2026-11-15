@@ -165,6 +165,13 @@ tr.us td{background:color-mix(in srgb,var(--club) 15%,transparent);font-weight:7
 }
 @keyframes beam{from{opacity:.8}to{opacity:1}}
 @keyframes drift{from{transform:translateY(0)}to{transform:translateY(-14px)}}
+.scorers{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.scorers li{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.scorers li:last-child{border-bottom:0}
+.scorers .n{font-family:var(--display);font-weight:700;color:var(--muted)}
+.scorers .nm{font-weight:600}
+.scorers .gl{font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--club);font-variant-numeric:tabular-nums}
+.scorers li:first-child .gl{color:var(--accent)}
 .fixtures{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
 .fx{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--club);border-radius:6px;padding:12px 14px;display:grid;gap:2px}
 .fx.bye{border-left-color:var(--line);opacity:.75}
@@ -335,6 +342,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           </table>
           <p class="note" id="tblNote"></p>
         </div>
+        <div class="sec-head" style="margin-top:28px"><h2>Strijelci</h2><p id="scLabel">Sezona 2026/27</p></div>
+        <div class="card"><ol class="scorers" id="scorers"></ol><p class="note" id="scNote"></p></div>
       </div>
       <div>
         <div class="sec-head"><h2>Rezultati</h2><p>Sve utakmice od 2018.</p></div>
@@ -720,8 +729,21 @@ function renderHero(){
   const tick=()=>{ const d=t-Date.now(); if(d<=0){el.textContent="Utakmica je u toku ili završena";return;} const dd=Math.floor(d/864e5),hh=Math.floor(d%864e5/36e5),mm=Math.floor(d%36e5/6e4); el.textContent=`${dd} d · ${hh} h · ${mm} min do početka`; };
   tick(); cdTimer=setInterval(tick,30000);
 }
+function renderScorers(){
+  const tot={}, ms=played().filter(m=>(m.h==="Kolina"||m.a==="Kolina"));
+  const withG=ms.filter(m=>m.g);
+  withG.forEach(m=>m.g.split(",").map(x=>x.trim()).filter(Boolean).forEach(x=>{
+    const mm=x.match(/^(.*?)\s*(?:x\s*)?(\d+)?$/); const nm=(mm?mm[1]:x).trim(); const n=mm&&mm[2]?+mm[2]:1;
+    if(nm) tot[nm]=(tot[nm]||0)+n;
+  }));
+  const rows=Object.entries(tot).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  document.getElementById("scLabel").textContent="Sezona "+cur().label;
+  document.getElementById("scorers").innerHTML=rows.length?rows.map(([nm,n],i)=>`<li><span class="n">${i+1}.</span><span class="nm">${nm}</span><span class="gl">${n}</span></li>`).join(""):'<li><span></span><span class="nm">Još nema upisanih strijelaca</span><span></span></li>';
+  const miss=ms.length-withG.length;
+  document.getElementById("scNote").textContent=miss>0?`Strijelci su poznati za ${withG.length} od ${ms.length} odigranih utakmica; ostali se dopunjavaju.`:"";
+}
 function renderAll(){
-  renderTable(); renderFixtures(); renderHero();
+  renderTable(); renderScorers(); renderFixtures(); renderHero();
   const sel=document.querySelector('.season-tabs button[aria-pressed="true"]');
   showSeason(sel?sel.dataset.s:cur().season);
   const u=document.getElementById("updated"); if(u&&KD.updated){const [y,mo,d]=KD.updated.split("-"); u.textContent=`podaci ažurirani ${d}.${mo}.${y}.`;}

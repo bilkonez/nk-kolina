@@ -9,7 +9,7 @@ Svi podaci o tekućoj sezoni su u **`data.json`**:
 - `current.matches` – sve utakmice tekuće sezone, za sve timove:
   - `r` kolo, `d` datum `DD.MM.YYYY` (ili `null`), `h` domaćin, `a` gost (kratki nazivi kao u `current.teams`)
   - `s` rezultat `"X:Y"` ili `null` ako nije odigrano / nema rezultata
-  - opcionalno: `g` strijelci Koline (npr. `"Polovina 3, Karahodža"`), `time` (`"13:00"`), `kickoff` (ISO, npr. `"2026-11-22T13:00:00+01:00"` – uključuje odbrojavanje)
+  - opcionalno: `g` strijelci Koline u toj utakmici (npr. `"Polovina 3, Karahodža"` – prezime, pa broj golova ako je više od 1; autogol kao `"autogol"`). Lista strijelaca na stranici se sama zbraja iz ovih polja, `time` (`"13:00"`), `kickoff` (ISO, npr. `"2026-11-22T13:00:00+01:00"` – uključuje odbrojavanje)
 - `history` / `summary` – prošle sezone (ne mijenjati osim kad se sezona završi).
 
 Tabela, lista rezultata, raspored, kartica „Sljedeća utakmica“ i napomena ispod tabele **računaju se automatski** iz `current.matches`.
