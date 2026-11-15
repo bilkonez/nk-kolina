@@ -1,6 +1,6 @@
 # NK Kolina Ustikolina – web stranica
 
-Statična stranica (bez build koraka). Netlify je objavljuje direktno iz ovog repozitorija.
+Statična stranica (bez build koraka). GitHub Pages je objavljuje (domena nkkolina.com, fajl CNAME) direktno iz ovog repozitorija.
 
 ## Šta se ažurira
 Svi podaci o tekućoj sezoni su u **`data.json`**:
