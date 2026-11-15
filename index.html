@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NK Kolina Ustikolina</title>
+<meta name="description" content="Zvanična stranica NK Kolina Ustikolina, osnovan 1956. Rezultati, tabela, raspored, stadion i kontakt. Klub svih nas.">
+<meta name="theme-color" content="#0a3d25">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="bs_BA">
+<meta property="og:site_name" content="NK Kolina Ustikolina">
+<meta property="og:title" content="NK Kolina Ustikolina · Klub svih nas">
+<meta property="og:description" content="Rezultati, tabela i raspored kluba iz Ustikoline. Osnovan 1956.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" id="fav">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+/* Plan: klupske boje bijela + zelena, jantar kao akcent. Traka s klubom i tabelom, rezultati, historija po sezonama, kadar, kontakt. */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#14211b; --muted:#5b6a62; --line:#dbe2dc;
+  --club:#0f6b3f; --club-deep:#0a3d25; --accent:#e5a623; --on-club:#ffffff;
+  --win:#1f8a4c; --draw:#8a8a8a; --loss:#c0392b;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1512; --surface:#15201b; --ink:#e8efea; --muted:#9db0a5; --line:#26352d;
+    --club:#14784a; --club-deep:#0a2a1b; --accent:#f0b43a; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1512; --surface:#15201b; --ink:#e8efea; --muted:#9db0a5; --line:#26352d;
+  --club:#14784a; --club-deep:#0a2a1b; --accent:#f0b43a; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:.01em}
+h2{font-size:2.2rem;text-transform:uppercase}
+h3{font-size:1.4rem;text-transform:uppercase}
+
+header{background:var(--club-deep);color:var(--on-club);position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .crest-sm{width:46px;height:auto;flex:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.hero-crest{width:150px;height:auto;display:block;margin-bottom:18px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+@media (max-width:520px){.hero-crest{width:110px}}
+.brand b{font-family:var(--display);font-size:1.5rem;text-transform:uppercase;letter-spacing:.04em}
+.brand small{display:block;font-size:.75rem;opacity:.75;letter-spacing:.12em;text-transform:uppercase}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:8px 12px;text-decoration:none;font-weight:600;font-size:.95rem;border-radius:4px}
+nav a:hover{background:rgba(255,255,255,.12)}
+
+.hero{background:var(--club);color:var(--on-club);position:relative;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.35;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:32px;padding-top:52px;padding-bottom:52px;align-items:center}
+.hero h1{font-size:clamp(3rem,8vw,5.6rem);text-transform:uppercase}
+.hero h1 span{color:var(--accent)}
+.hero p{max-width:52ch;font-size:1.1rem;opacity:.95}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tag{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;border:1px solid rgba(255,255,255,.45);padding:4px 10px;border-radius:999px}
+.motto{font-family:var(--display);font-size:1.4rem;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+
+.match{background:var(--surface);color:var(--ink);border-radius:10px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.25);border-top:6px solid var(--accent)}
+.match .label{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:14px 0;text-align:center}
+.teams .t{font-family:var(--display);font-size:1.5rem;font-weight:700;text-transform:uppercase;line-height:1.1}
+.teams .sc{font-family:var(--display);font-size:3rem;font-weight:800;font-variant-numeric:tabular-nums;color:var(--club)}
+.teams .vs{font-size:1.6rem;color:var(--muted)}
+.countdown{font-family:var(--display);font-size:1.25rem;text-transform:uppercase;letter-spacing:.06em;text-align:center;margin:-4px 0 14px;color:var(--club);font-variant-numeric:tabular-nums}
+.match .meta b{color:var(--ink)}
+.match .meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.95rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+
+section{padding:56px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap;border-bottom:3px solid var(--club);padding-bottom:8px}
+.sec-head p{margin:0;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px}
+.note{font-size:.85rem;color:var(--muted);margin:10px 0 0}
+
+.season-sum{margin:0 0 12px;font-weight:600;color:var(--muted)}
+.results{max-height:640px;overflow-y:auto;padding-right:4px;list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.res{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:10px 14px;border:1px solid var(--line);border-left:6px solid var(--draw);border-radius:6px;background:var(--surface)}
+.res.w{border-left-color:var(--win)} .res.l{border-left-color:var(--loss)}
+.res .pill{font-family:var(--display);font-weight:700;width:30px;height:30px;display:grid;place-items:center;border-radius:4px;color:#fff;background:var(--draw)}
+.res.w .pill{background:var(--win)} .res.l .pill{background:var(--loss)}
+.res .who{font-weight:600}
+.res .who small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.res .score{font-family:var(--display);font-size:1.6rem;font-weight:700;font-variant-numeric:tabular-nums}
+.season-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.season-tabs button{font:600 .95rem var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.season-tabs button[aria-pressed="true"]{background:var(--club);color:var(--on-club);border-color:var(--club)}
+
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.95rem}
+th,td{padding:9px 6px;text-align:center;border-bottom:1px solid var(--line)}
+th{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td:nth-child(2),th:nth-child(2){text-align:left}
+tr.us td{background:color-mix(in srgb,var(--club) 15%,transparent);font-weight:700}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+.about p{max-width:65ch;margin-top:0}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.facts li:last-child{border-bottom:0}
+.facts li span:first-child{color:var(--muted)}
+.facts li span:last-child{font-weight:600;text-align:right}
+.facts.card{padding:6px 24px}
+.facts li span{min-width:0;overflow-wrap:anywhere}
+.facts li span:first-child{flex:none}
+.contact{max-width:760px;margin:0 auto}
+@media (max-width:520px){
+  .facts.card{padding:4px 16px}
+  .facts li{flex-direction:column;gap:2px}
+  .facts li span:last-child{text-align:left}
+}
+
+.timeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.timeline li{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--line);border-radius:6px;padding:12px}
+.timeline li.d2{border-top-color:var(--club)}
+.timeline li.top{border-top-color:var(--accent)}
+.timeline b{font-family:var(--display);font-size:1.3rem;display:block}
+.timeline span{font-size:.9rem;color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.stat{background:var(--club-deep);color:var(--on-club);border-radius:8px;padding:16px}
+.stat b{font-family:var(--display);font-size:2.4rem;display:block;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:.9rem;opacity:.85}
+
+
+.contact a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.kit{background:#030605;color:#e8efea}
+.kit .sec-head{border-color:var(--accent)}
+.kit .sec-head p{color:#9db0a5}
+.kit-fig{margin:0}
+.kit-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.kit-tabs button{font:600 .95rem var(--body);padding:8px 16px;border-radius:999px;border:1px solid #2b3d33;background:transparent;color:#e8efea;cursor:pointer}
+.kit-tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#14211b}
+.kit-stage{position:relative;height:0;padding-top:64%;border-radius:10px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.6);background:#030605}
+.kit-svg,#kit3d{position:absolute;top:0;left:0;width:100%;height:100%;display:block}
+#kit3d{opacity:0;transition:opacity .6s}
+.kit-stage.is3d #kit3d{opacity:1}
+.kit-stage.is3d .kit-svg{visibility:hidden}
+@media (max-width:600px){.kit-stage{padding-top:108%}}
+.kit-fig figcaption{margin-top:14px;color:#9db0a5}
+.kit-caps{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.kit-caps b{display:block;color:#e8efea;font-family:var(--display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em}
+@media (max-width:600px){.kit-caps{grid-template-columns:1fr;gap:12px}}
+@media (prefers-reduced-motion:no-preference){
+  .kit .beams{animation:beam 7s ease-in-out infinite alternate}
+  .kit .dust{animation:drift 14s linear infinite alternate}
+}
+@keyframes beam{from{opacity:.8}to{opacity:1}}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-14px)}}
+.fixtures{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.fx{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--club);border-radius:6px;padding:12px 14px;display:grid;gap:2px}
+.fx.bye{border-left-color:var(--line);opacity:.75}
+.fx .rd{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fx .pair{font-family:var(--display);font-size:1.35rem;font-weight:700}
+.fx .when{font-size:.9rem;color:var(--muted)}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btns .btn{display:inline-block;text-decoration:none;font:700 1rem var(--body);background:var(--club);color:var(--on-club);border-radius:6px;padding:11px 18px}
+.btns .btn.ghost{background:transparent;color:var(--club);border:2px solid var(--club)}
+.stad{padding:0 0 56px}
+.stad-hero{position:relative;height:clamp(320px,52vw,560px);overflow:hidden;background:#0a3d25}
+.stad-hero img{width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block}
+.stad-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(5,20,12,.85) 100%)}
+.stad-over{position:absolute;left:0;right:0;bottom:28px;z-index:1;color:#fff}
+.stad-over .tag{border-color:rgba(255,255,255,.6)}
+.stad-over h2{font-size:clamp(2.2rem,6vw,4rem);margin:10px 0 4px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.stad-over p{margin:0;opacity:.9}
+.stad-body{padding-top:24px}
+.stad-txt{max-width:65ch;margin:0 0 18px}
+.stad-aerial{margin:0 0 14px}
+.stad-aerial img{width:100%;max-height:520px;object-fit:cover;border-radius:10px;display:block}
+.stad-aerial figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+.stad-air{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.stad-air img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block}
+@media (max-width:640px){.stad-air{grid-template-columns:1fr}}
+.stad-thumbs{display:grid;grid-template-columns:3fr 2fr;gap:12px;margin-bottom:18px}
+.stad-thumbs img{width:100%;height:320px;object-fit:cover;border-radius:8px;display:block}
+@media (max-width:640px){.stad-thumbs{grid-template-columns:1fr}.stad-thumbs img{height:200px}}
+.support{padding-top:0}
+.support .sup-lead{margin-bottom:22px}
+.sup-lead{max-width:65ch;margin:0 0 18px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:start;margin-bottom:8px;perspective:1200px}
+.mc-wrap{display:grid;gap:12px}
+.mcard{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;height:0;padding-top:63.05%;position:relative;-webkit-tap-highlight-color:transparent;--rx:0deg;--ry:0deg}
+.mcard:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:14px}
+.mc-inner{position:absolute;top:0;left:0;right:0;bottom:0;transition:transform .25s ease;transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) scaleX(var(--sxk,1))}
+.mc-back{display:none}
+.mcard.flipped .mc-front{display:none}
+.mcard.flipped .mc-back{display:block}
+.mc-face{position:absolute;top:0;left:0;right:0;bottom:0;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.3);background-color:var(--base);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.09' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 -.18'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E"),radial-gradient(120% 90% at 20% 10%,rgba(255,255,255,.12),transparent 60%),linear-gradient(160deg,var(--base),var(--base2));background-size:cover}
+
+.mc-gold{--base:#1c1d1b;--base2:#0b0c0b;--metal:linear-gradient(100deg,#6e4f16 0%,#c9992f 12%,#fff0b3 24%,#d9ad45 34%,#8a6420 48%,#e6c25f 62%,#fff4c8 72%,#b88a2d 86%,#6e4f16 100%);--title:linear-gradient(180deg,#fff6d2 0%,#f0cf73 40%,#b5862b 62%,#f6dc8c 100%)}
+.mc-jub{--base:#1a2a5c;--base2:#0b1433;--metal:linear-gradient(100deg,#6e4f16 0%,#c9992f 12%,#fff0b3 24%,#d9ad45 34%,#8a6420 48%,#e6c25f 62%,#fff4c8 72%,#b88a2d 86%,#6e4f16 100%);--title:linear-gradient(180deg,#fffaf0 0%,#f3e2b5 45%,#c9a65a 70%,#f7e8c2 100%)}
+.mc-cl{--base:#0f4a2a;--base2:#062615;--metal:linear-gradient(100deg,#5b2f14 0%,#b86a35 14%,#ffd0a0 26%,#cf8a52 38%,#7a3f1a 52%,#e0a06a 66%,#ffe0c0 76%,#a85d2c 88%,#5b2f14 100%);--title:linear-gradient(180deg,#ffffff 0%,#f1efe6 55%,#cfcabb 100%)}
+.mc-band{position:absolute;left:0;right:0;height:9%;background:var(--metal);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(0,0,0,.35)}
+.mc-band.top{top:5%}.mc-band.bot{bottom:5%}
+.mc-crest{position:absolute;left:4.5%;top:50%;height:68%;transform:translateY(-50%);filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+.mc-txt{position:absolute;right:5%;top:16%;bottom:17%;left:52%;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;text-align:right;color:#fff;container-type:inline-size}
+.mc-title{font-family:var(--display);font-weight:800;font-size:2rem;font-size:clamp(.9rem,18cqw,2.6rem);line-height:1.08;padding-top:.06em;white-space:nowrap;letter-spacing:.02em;background:var(--title);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 1px rgba(0,0,0,.45))}
+.mc-sub{font-size:.95rem;font-family:var(--display);font-size:clamp(.6rem,8.5cqw,1.2rem);letter-spacing:.06em;color:#f2ead3;margin-top:-2px}
+.mc-club{font-size:.6rem;font-size:clamp(.45rem,5.2cqw,.75rem);letter-spacing:.08em;line-height:1.25;color:#f4f1e8;text-align:center;align-self:flex-end}
+.mc-price{font-size:1.05rem;background:#fff;color:#121212;font-family:var(--display);font-weight:800;font-size:clamp(.7rem,10cqw,1.4rem);padding:1px 12px;border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.4)}
+.mc-no{font-size:.55rem;font-size:clamp(.4rem,4.6cqw,.68rem);color:#e8e2cf;font-weight:600}
+.mc-btop{position:absolute;left:0;right:0;top:0;height:42%}
+.mc-crest-b{position:absolute;left:50%;top:8%;height:84%;transform:translateX(-50%);filter:drop-shadow(0 4px 8px rgba(0,0,0,.45))}
+.mc-bmetal{position:absolute;left:0;right:0;bottom:0;height:58%;background:var(--metal);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 2px 0 rgba(255,255,255,.4);container-type:inline-size}
+.mc-bmetal::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.09' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 -.18'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)'/%3E%3C/svg%3E");mix-blend-mode:multiply;opacity:.55}
+.mc-script{font-size:2.2rem;position:relative;font-family:"Great Vibes",cursive;font-size:clamp(1.2rem,14cqw,3.2rem);color:#178a3c;text-shadow:0 1px 0 rgba(255,255,255,.45),0 -1px 0 rgba(0,0,0,.25)}
+.mc-script2{font-size:1.2rem;position:relative;font-family:"Great Vibes",cursive;font-size:clamp(.8rem,8cqw,1.8rem);color:#178a3c;margin-top:-4px;text-shadow:0 1px 0 rgba(255,255,255,.45)}
+.mc-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.28) 45%,rgba(255,255,255,.05) 55%,transparent 70%);background-size:250% 100%;background-position:var(--sx,120%) 0;mix-blend-mode:screen;transition:background-position .2s}
+.tier-info{display:grid;gap:2px}
+.tier-info b{font-family:var(--display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.03em}
+.tier-info span{color:var(--muted);font-size:.95rem}
+.mc-hint{margin:0 0 18px}
+@media (max-width:860px){.tiers{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+@media (max-width:600px){.tiers{max-width:360px;gap:26px}}
+@media (prefers-reduced-motion:reduce){.mc-inner{transition:none}}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:20px 24px}
+.pay h3{font-size:1.3rem;margin-bottom:8px}
+.pay p{margin:0 0 8px}
+.acc{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.acc span{font-family:var(--display);font-size:1.7rem;font-weight:700;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.copy{font:600 .9rem var(--body);padding:7px 12px;border-radius:6px;border:1px solid var(--club);background:transparent;color:var(--club);cursor:pointer}
+.muted{color:var(--muted);font-size:.92rem}
+@media (max-width:760px){.pay{grid-template-columns:1fr}}
+.menu-btn{display:none}
+@media (max-width:760px){
+  .nav{min-height:58px;flex-wrap:nowrap}
+  .brand b{font-size:1.25rem}
+  .brand .crest-sm{width:38px}
+  .menu-btn{display:grid;gap:5px;place-content:center;width:44px;height:44px;border:0;border-radius:8px;background:rgba(255,255,255,.08);cursor:pointer;flex:none}
+  .menu-btn span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
+  .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  #mainNav{position:absolute;left:0;right:0;top:100%;background:var(--club-deep);border-top:1px solid rgba(255,255,255,.1);box-shadow:0 12px 24px rgba(0,0,0,.3);display:none}
+  #mainNav.open{display:block}
+  #mainNav ul{flex-direction:column;gap:0;padding:6px 12px 12px}
+  #mainNav a{padding:13px 8px;font-size:1.05rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  header{position:sticky}
+  .grid2>*{min-width:0}
+  table{font-size:.86rem}
+  th,td{padding:8px 4px}
+  .results{padding-right:0}
+  .res{gap:10px;padding:10px 12px}
+  .res .score{font-size:1.4rem}
+  .hero .wrap{padding-top:36px;padding-bottom:40px;gap:24px}
+  .hero-crest{width:96px;margin-bottom:12px}
+  .teams .t{font-size:1.25rem}
+  section{padding:44px 0}
+  h2{font-size:1.9rem}
+  .sec-head{gap:4px 16px}
+  .stats{gap:10px}
+  .stat b{font-size:2rem}
+}
+footer{background:var(--club-deep);color:rgba(255,255,255,.85);padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero .wrap,.grid2,.about{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:420px){nav a{padding:6px 8px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#pocetna" aria-label="NK Kolina, početna">
+      <img class="crest-sm" src="data:image/webp;base64,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" alt="" width="46" height="46">
+      <span><b>NK Kolina</b><small>Ustikolina · 1956.</small></span>
+    </a>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Otvori meni"><span></span><span></span><span></span></button>
+    <nav aria-label="Glavna navigacija" id="mainNav">
+      <ul>
+        <li><a href="#utakmice">Utakmice</a></li>
+        <li><a href="#klub">Klub</a></li>
+        <li><a href="#raspored">Raspored</a></li>
+        <li><a href="#stadion">Stadion</a></li>
+        <li><a href="#dres">Dres</a></li>
+        <li><a href="#podrzi">Podrži klub</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="pocetna">
+  <div class="hero">
+    <canvas id="river" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <img class="hero-crest" alt="Grb NK Kolina Ustikolina" width="150" height="149">
+        <div class="tags"><span class="tag">Osnovan 1956.</span><span class="tag">JKL FS BPK Goražde</span></div>
+        <h1>NK Kolina <span>Ustikolina</span></h1>
+        <p>Klub sa ušća Koline u Drinu. Pet sezona u Drugoj ligi FBiH Centar, a danas u Jedinstvenoj kantonalnoj ligi Bosanskopodrinjskog kantona.</p>
+        <div class="motto">Klub svih nas</div>
+      </div>
+      <aside class="match" aria-labelledby="nextLbl" id="heroCard">
+        <div class="label" id="nextLbl">Sljedeća utakmica</div>
+        <div class="teams"><div class="t" id="nxH">–</div><div class="sc vs">vs</div><div class="t" id="nxA">–</div></div>
+        <div class="countdown" id="countdown">Termin još nije objavljen</div>
+        <div class="meta"><span>Posljednja: <b id="lsScore">–</b></span><span id="lsGoals"></span></div>
+      </aside>
+    </div>
+  </div>
+
+  <section id="utakmice">
+    <div class="wrap grid2">
+      <div>
+        <div class="sec-head"><h2>Tabela</h2><p>JKL FS BPK Goražde 2026/27</p></div>
+        <div class="card tbl-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Klub</th><th>U</th><th>P</th><th>N</th><th>I</th><th>Golovi</th><th>GR</th><th>B</th></tr></thead>
+            <tbody id="tblBody"></tbody>
+          </table>
+          <p class="note" id="tblNote"></p>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head"><h2>Rezultati</h2><p>Sve utakmice od 2018.</p></div>
+        <div class="season-tabs" role="group" aria-label="Izaberi sezonu"><button type="button" data-s="2026-2027" aria-pressed="true">26/27</button><button type="button" data-s="2025-2026" aria-pressed="false">25/26</button><button type="button" data-s="2024-2025" aria-pressed="false">24/25</button><button type="button" data-s="2023-2024" aria-pressed="false">23/24</button><button type="button" data-s="2022-2023" aria-pressed="false">22/23</button><button type="button" data-s="2021-2022" aria-pressed="false">21/22</button><button type="button" data-s="2020-2021" aria-pressed="false">20/21</button><button type="button" data-s="2019-2020" aria-pressed="false">19/20</button><button type="button" data-s="2018-2019" aria-pressed="false">18/19</button></div>
+        <p class="season-sum" id="seasonSum"></p>
+        <ul class="results" id="results"></ul>
+      </div>
+    </div>
+  </section>
+
+    <section id="raspored" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>Raspored</h2><p>JKL FS BPK Goražde 2026/27</p></div>
+      <ol class="fixtures" id="fixtures"></ol>
+      <p class="note" id="fxNote">Termini se objavljuju sedmicu pred kolo.</p>
+    </div>
+  </section>
+
+  <section id="klub" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>O klubu</h2><p>Od 1956. na ušću Koline</p></div>
+      <div class="about">
+        <div>
+          <p>NK Kolina osnovan je 1956. godine u Ustikolini, sjedištu općine Foča-Ustikolina. Ime je dobio po rijeci Kolini, po kojoj je ime dobilo i mjesto: Ustikolina znači „ušće Koline“.</p>
+          <p>Domaće utakmice igramo na stadionu Šehidi Koline, čiji se travnjak u domaćim medijima opisuje kao jedan od najuređenijih u nižim ligama BiH. Nakon titule u Kantonalnoj ligi BPK 2018/19, od 2020. do 2025. klub je igrao u Drugoj ligi FBiH, grupa Centar, i takmičio se u Kupu FBiH i Kupu BiH. Najbolji plasman u tom periodu je 4. mjesto sa 59 bodova u sezoni 2022/23, kada je Kolina u Kupu BiH dočekala i premijerligaša Posušje.</p>
+          <p>Od sezone 2025/26 Kolina igra u Jedinstvenoj kantonalnoj ligi FS BPK Goražde. Prvu sezonu u ligi završila je sa 10 pobjeda iz 12 utakmica i 57 postignutih golova.</p>
+        </div>
+        <ul class="facts card">
+          <li><span>Osnovan</span><span>1956.</span></li>
+          <li><span>Boje</span><span>Bijela i zelena</span></li>
+          <li><span>Stadion</span><span>Šehidi Koline</span></li>
+          <li><span>Takmičenje</span><span>JKL FS BPK Goražde</span></li>
+          <li><span>Predsjednica</span><span>Sanela Mulabdić</span></li>
+          <li><span>Adresa</span><span>Ustikolina bb, 73250 Ustikolina</span></li>
+        </ul>
+      </div>
+
+      <h3 style="margin:36px 0 14px">Sezone</h3>
+      <ol class="timeline">
+        <li class="top"><b>2018/19</b><span>Kantonalna liga BPK · prvak, 8 od 8 pobjeda, 46:11</span></li>
+        <li><b>2019/20</b><span>Kantonalna liga BPK · prvi sa 4 od 4 pobjede, sezona nije završena</span></li>
+        <li class="d2"><b>2020/21</b><span>Druga liga FBiH Centar · 7. mjesto, 45 bodova</span></li>
+        <li class="d2"><b>2021/22</b><span>Druga liga FBiH Centar · 7. mjesto, 46 bodova</span></li>
+        <li class="d2 top"><b>2022/23</b><span>Druga liga FBiH Centar · 4. mjesto, 59 bodova · Kup BiH</span></li>
+        <li class="d2"><b>2023/24</b><span>Druga liga FBiH Centar · 10. mjesto, 40 bodova</span></li>
+        <li class="d2"><b>2024/25</b><span>Druga liga FBiH Centar · 6. mjesto, 48 bodova</span></li>
+        <li class="top"><b>2025/26</b><span>JKL BPK · 10 pobjeda, 30 bodova, 57:15</span></li>
+        <li class="top"><b>2026/27</b><span>JKL BPK · sezona u toku</span></li>
+      </ol>
+
+      <div class="stats" aria-label="Statistika od oktobra 2018. do maja 2026.">
+        <div class="stat"><b>183</b><span>utakmice od 2018.</span></div>
+        <div class="stat"><b>96</b><span>pobjeda</span></div>
+        <div class="stat"><b>408</b><span>postignutih golova</span></div>
+        <div class="stat"><b>13:1</b><span>najveća pobjeda, protiv Radničkog 2026.</span></div>
+      </div>
+      <p class="note">Statistika obuhvata ligaške i kup utakmice od 07.10.2018. do 24.05.2026.</p>
+    </div>
+  </section>
+
+
+
+
+  <section id="stadion" class="stad">
+    <div class="stad-hero">
+      <img src="gallery/dron2.webp" alt="Stadion Šehidi Koline iz zraka, uz Drinu, s tribinom punom navijača" width="960" height="540" decoding="async">
+      <div class="stad-over wrap">
+        <span class="tag">Domaći teren</span>
+        <h2>Stadion Šehidi Koline</h2>
+        <p>Cvilin, Ustikolina · općina Foča-Ustikolina</p>
+      </div>
+    </div>
+    <div class="wrap stad-body">
+      <p class="stad-txt">Domaće utakmice igramo na Cvilinu, na obali Drine, ispod šumovitih brda koja se ujesen oboje u zlatno. Travnjak važi za jedan od najuređenijih u nižim ligama u BiH, a tribina uz teren puni se na svakoj domaćoj utakmici.</p>
+      <div class="stad-air">
+        <img src="gallery/dron1.webp" alt="Cvilin iz zraka: teren, tribina i put uz stadion" width="1600" height="900" loading="lazy" decoding="async">
+        <img src="gallery/dron3.webp" alt="Utakmica na Cvilinu snimljena dronom odozgo" width="1600" height="900" loading="lazy" decoding="async">
+      </div>
+      <div class="stad-thumbs">
+        <img src="gallery/stadion.webp" alt="Teren stadiona Šehidi Koline sa središnjom linijom, tribinom i brdima" width="1800" height="1086" loading="lazy" decoding="async">
+        <img src="gallery/korner.webp" alt="Pogled sa kornera na teren i svlačionice na Cvilinu" width="960" height="720" loading="lazy" decoding="async">
+      </div>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Stadion%20%C5%A0ehidi%20Koline%20Ustikolina">Otvori na mapi</a>
+        <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Stadion%20%C5%A0ehidi%20Koline%20Ustikolina">Upute za put</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="dres" class="kit">
+    <div class="wrap">
+      <div class="sec-head"><h2>Dres</h2><p>Dva kompleta</p></div>
+      <figure class="kit-fig">
+        <div class="kit-stage" id="kitStage"><canvas id="kit3d" aria-label="3D prikaz domaćeg dresa NK Kolina" role="img"></canvas>
+        <svg class="kit-svg" viewBox="0 0 1000 640" role="img" aria-labelledby="kitT">
+<title id="kitT">Domaći dres NK Kolina: bijela majica s grbom na lijevoj strani grudi i sponzorom Prevent</title>
+<defs>
+  <radialGradient id="bgG" cx="50%" cy="40%" r="75%">
+    <stop offset="0" stop-color="#1c3a2b"/><stop offset=".45" stop-color="#0b1812"/><stop offset="1" stop-color="#020403"/>
+  </radialGradient>
+  <linearGradient id="beamL" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff3d6" stop-opacity=".6"/><stop offset=".55" stop-color="#fff3d6" stop-opacity=".12"/><stop offset="1" stop-color="#fff3d6" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="beamR" x1="1" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#d5e8ff" stop-opacity=".38"/><stop offset=".6" stop-color="#d5e8ff" stop-opacity=".07"/><stop offset="1" stop-color="#d5e8ff" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="22" dy="30" stdDeviation="22" flood-color="#000" flood-opacity=".6"/></filter>
+
+  <!-- tkanina: talasanje + svjetlo -->
+  <filter id="cloth" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.0045 0.011" numOctaves="2" seed="11" result="wave">
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="wave" scale="34" xChannelSelector="R" yChannelSelector="G" result="warped"/>
+    <feGaussianBlur in="wave" stdDeviation="2.5" result="bump"/>
+    <feDiffuseLighting in="bump" surfaceScale="9" diffuseConstant="1.15" lighting-color="#ffffff" result="diff">
+      <feDistantLight azimuth="225" elevation="42"/>
+    </feDiffuseLighting>
+    <feSpecularLighting in="bump" surfaceScale="9" specularConstant=".55" specularExponent="22" lighting-color="#fff8e6" result="spec">
+      <feDistantLight azimuth="225" elevation="42"/>
+    </feSpecularLighting>
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="2" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .06 0" result="grainA"/>
+    <feComposite in="warped" in2="diff" operator="arithmetic" k1="1.08" k2="0" k3="0" k4="0" result="lit"/>
+    <feComposite in="spec" in2="warped" operator="in" result="specIn"/>
+    <feComposite in="grainA" in2="warped" operator="in" result="grainIn"/>
+    <feMerge result="m"><feMergeNode in="lit"/><feMergeNode in="specIn"/><feMergeNode in="grainIn"/></feMerge>
+    <feComposite in="m" in2="warped" operator="in"/>
+  </filter>
+
+  <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#9aa39d" stop-opacity=".08"/><stop offset="1" stop-color="#4c5550" stop-opacity=".45"/>
+  </linearGradient>
+  <radialGradient id="hot" cx="28%" cy="16%" r="60%">
+    <stop offset="0" stop-color="#fffaea" stop-opacity=".9"/><stop offset=".5" stop-color="#fffaea" stop-opacity=".12"/><stop offset="1" stop-color="#fffaea" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="rim" x1="1" y1="0" x2="0" y2="0">
+    <stop offset="0" stop-color="#cfe4ff" stop-opacity=".75"/><stop offset=".1" stop-color="#cfe4ff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="inner" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#8d958f"/><stop offset="1" stop-color="#c9cfca"/>
+  </linearGradient>
+  <pattern id="mesh" width="5" height="5" patternUnits="userSpaceOnUse">
+    <circle cx="2.5" cy="2.5" r=".9" fill="#7d867f" opacity=".18"/>
+  </pattern>
+  <radialGradient id="floor" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#fff3d6" stop-opacity=".2"/><stop offset="1" stop-color="#fff3d6" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="vign" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset=".18" stop-color="#000" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".65"/>
+  </linearGradient>
+  <clipPath id="shirtClip"><path d="M418 72 L500 158 L582 72 C622 80 662 92 692 108 L802 212 C792 242 772 266 746 286 L690 242 C686 330 690 420 700 542 C640 558 560 564 500 564 C440 564 360 558 300 542 C310 420 314 330 310 242 L254 286 C228 266 208 242 198 212 L308 108 C338 92 378 80 418 72 Z"/></clipPath>
+</defs>
+
+<rect width="1000" height="640" fill="url(#bgG)"/>
+<g filter="url(#soft)" class="beams">
+  <polygon points="-60,-60 110,-60 760,640 280,640" fill="url(#beamL)"/>
+  <polygon points="1060,-60 950,-60 430,640 780,640" fill="url(#beamR)"/>
+</g>
+<circle cx="18" cy="-14" r="80" fill="#fff3d6" opacity=".6" filter="url(#soft)"/>
+<circle cx="1000" cy="-14" r="60" fill="#d5e8ff" opacity=".45" filter="url(#soft)"/>
+<g class="dust"><circle cx="391" cy="174" r="1.8" fill="#fff" opacity="0.12"/><circle cx="134" cy="568" r="0.8" fill="#fff" opacity="0.3"/><circle cx="656" cy="79" r="2.4" fill="#fff" opacity="0.2"/><circle cx="98" cy="108" r="1.8" fill="#fff" opacity="0.45"/><circle cx="131" cy="266" r="0.8" fill="#fff" opacity="0.45"/><circle cx="120" cy="599" r="0.8" fill="#fff" opacity="0.2"/><circle cx="705" cy="83" r="2.4" fill="#fff" opacity="0.45"/><circle cx="110" cy="246" r="0.8" fill="#fff" opacity="0.2"/><circle cx="356" cy="449" r="1" fill="#fff" opacity="0.12"/><circle cx="644" cy="335" r="2.4" fill="#fff" opacity="0.2"/><circle cx="165" cy="212" r="1.3" fill="#fff" opacity="0.12"/><circle cx="620" cy="84" r="2.4" fill="#fff" opacity="0.12"/><circle cx="693" cy="230" r="1.8" fill="#fff" opacity="0.45"/><circle cx="855" cy="341" r="1.8" fill="#fff" opacity="0.45"/><circle cx="430" cy="326" r="1" fill="#fff" opacity="0.2"/><circle cx="775" cy="269" r="0.8" fill="#fff" opacity="0.3"/><circle cx="597" cy="526" r="1.3" fill="#fff" opacity="0.45"/><circle cx="354" cy="94" r="0.8" fill="#fff" opacity="0.45"/><circle cx="228" cy="370" r="1" fill="#fff" opacity="0.45"/><circle cx="491" cy="60" r="0.8" fill="#fff" opacity="0.3"/><circle cx="408" cy="378" r="2.4" fill="#fff" opacity="0.45"/><circle cx="653" cy="487" r="0.8" fill="#fff" opacity="0.12"/><circle cx="336" cy="505" r="0.8" fill="#fff" opacity="0.12"/><circle cx="808" cy="337" r="2.4" fill="#fff" opacity="0.45"/><circle cx="351" cy="415" r="1.3" fill="#fff" opacity="0.12"/><circle cx="532" cy="383" r="1" fill="#fff" opacity="0.12"/><circle cx="565" cy="80" r="1" fill="#fff" opacity="0.3"/><circle cx="192" cy="273" r="1.8" fill="#fff" opacity="0.45"/><circle cx="568" cy="102" r="1" fill="#fff" opacity="0.45"/><circle cx="471" cy="582" r="1.3" fill="#fff" opacity="0.2"/><circle cx="898" cy="460" r="2.4" fill="#fff" opacity="0.3"/><circle cx="783" cy="445" r="1.3" fill="#fff" opacity="0.45"/><circle cx="296" cy="174" r="0.8" fill="#fff" opacity="0.2"/><circle cx="214" cy="257" r="1" fill="#fff" opacity="0.12"/><circle cx="556" cy="206" r="1.3" fill="#fff" opacity="0.3"/><circle cx="64" cy="169" r="1.8" fill="#fff" opacity="0.3"/><circle cx="684" cy="599" r="1.3" fill="#fff" opacity="0.2"/><circle cx="767" cy="547" r="2.4" fill="#fff" opacity="0.12"/><circle cx="527" cy="592" r="1.8" fill="#fff" opacity="0.45"/><circle cx="468" cy="423" r="0.8" fill="#fff" opacity="0.45"/><circle cx="709" cy="430" r="0.8" fill="#fff" opacity="0.2"/><circle cx="128" cy="233" r="1.8" fill="#fff" opacity="0.2"/><circle cx="172" cy="368" r="2.4" fill="#fff" opacity="0.12"/><circle cx="164" cy="20" r="2.4" fill="#fff" opacity="0.2"/><circle cx="609" cy="123" r="1.3" fill="#fff" opacity="0.12"/><circle cx="132" cy="232" r="2.4" fill="#fff" opacity="0.45"/><circle cx="212" cy="278" r="1.3" fill="#fff" opacity="0.3"/><circle cx="545" cy="145" r="0.8" fill="#fff" opacity="0.45"/><circle cx="537" cy="511" r="1.8" fill="#fff" opacity="0.3"/><circle cx="147" cy="167" r="0.8" fill="#fff" opacity="0.3"/><circle cx="818" cy="291" r="1.8" fill="#fff" opacity="0.2"/><circle cx="588" cy="43" r="1" fill="#fff" opacity="0.3"/><circle cx="210" cy="576" r="0.8" fill="#fff" opacity="0.3"/><circle cx="718" cy="113" r="1.3" fill="#fff" opacity="0.3"/><circle cx="231" cy="384" r="1" fill="#fff" opacity="0.3"/><circle cx="711" cy="248" r="2.4" fill="#fff" opacity="0.2"/><circle cx="885" cy="265" r="1.8" fill="#fff" opacity="0.2"/><circle cx="264" cy="550" r="1.8" fill="#fff" opacity="0.3"/><circle cx="808" cy="49" r="0.8" fill="#fff" opacity="0.3"/><circle cx="543" cy="285" r="1" fill="#fff" opacity="0.3"/><circle cx="517" cy="377" r="1.3" fill="#fff" opacity="0.12"/><circle cx="285" cy="124" r="1" fill="#fff" opacity="0.45"/><circle cx="261" cy="365" r="1" fill="#fff" opacity="0.45"/><circle cx="699" cy="21" r="1.8" fill="#fff" opacity="0.3"/><circle cx="878" cy="106" r="0.8" fill="#fff" opacity="0.45"/><circle cx="861" cy="224" r="1.8" fill="#fff" opacity="0.2"/><circle cx="504" cy="360" r="0.8" fill="#fff" opacity="0.45"/><circle cx="534" cy="431" r="0.8" fill="#fff" opacity="0.2"/><circle cx="234" cy="150" r="0.8" fill="#fff" opacity="0.2"/><circle cx="664" cy="496" r="1" fill="#fff" opacity="0.45"/><circle cx="733" cy="378" r="1" fill="#fff" opacity="0.2"/><circle cx="81" cy="34" r="0.8" fill="#fff" opacity="0.2"/><circle cx="504" cy="219" r="1" fill="#fff" opacity="0.12"/><circle cx="317" cy="237" r="1.3" fill="#fff" opacity="0.2"/><circle cx="842" cy="353" r="1.3" fill="#fff" opacity="0.45"/><circle cx="914" cy="154" r="0.8" fill="#fff" opacity="0.3"/><circle cx="529" cy="549" r="1.8" fill="#fff" opacity="0.2"/><circle cx="604" cy="175" r="2.4" fill="#fff" opacity="0.12"/><circle cx="510" cy="207" r="2.4" fill="#fff" opacity="0.12"/><circle cx="854" cy="173" r="1" fill="#fff" opacity="0.2"/><circle cx="544" cy="143" r="2.4" fill="#fff" opacity="0.12"/><circle cx="393" cy="550" r="2.4" fill="#fff" opacity="0.45"/><circle cx="863" cy="128" r="2.4" fill="#fff" opacity="0.12"/><circle cx="314" cy="215" r="1.3" fill="#fff" opacity="0.12"/><circle cx="850" cy="120" r="2.4" fill="#fff" opacity="0.45"/><circle cx="635" cy="48" r="0.8" fill="#fff" opacity="0.45"/><circle cx="393" cy="537" r="2.4" fill="#fff" opacity="0.2"/><circle cx="769" cy="303" r="1.8" fill="#fff" opacity="0.45"/><circle cx="579" cy="273" r="2.4" fill="#fff" opacity="0.3"/><circle cx="632" cy="227" r="1.8" fill="#fff" opacity="0.2"/><circle cx="486" cy="144" r="1.8" fill="#fff" opacity="0.45"/><circle cx="383" cy="94" r="1" fill="#fff" opacity="0.45"/><circle cx="134" cy="237" r="1.3" fill="#fff" opacity="0.12"/><circle cx="855" cy="178" r="1.3" fill="#fff" opacity="0.2"/><circle cx="319" cy="160" r="1.8" fill="#fff" opacity="0.2"/><circle cx="824" cy="116" r="1.8" fill="#fff" opacity="0.45"/><circle cx="226" cy="249" r="1" fill="#fff" opacity="0.45"/><circle cx="587" cy="433" r="1.3" fill="#fff" opacity="0.45"/><circle cx="260" cy="385" r="1.3" fill="#fff" opacity="0.12"/><circle cx="799" cy="394" r="0.8" fill="#fff" opacity="0.3"/><circle cx="627" cy="489" r="1.8" fill="#fff" opacity="0.12"/><circle cx="453" cy="359" r="2.4" fill="#fff" opacity="0.3"/><circle cx="584" cy="85" r="0.8" fill="#fff" opacity="0.2"/><circle cx="167" cy="106" r="1.3" fill="#fff" opacity="0.3"/><circle cx="100" cy="205" r="1.3" fill="#fff" opacity="0.2"/><circle cx="899" cy="452" r="1.3" fill="#fff" opacity="0.45"/><circle cx="212" cy="569" r="2.4" fill="#fff" opacity="0.45"/><circle cx="777" cy="354" r="0.8" fill="#fff" opacity="0.3"/><circle cx="118" cy="207" r="1.8" fill="#fff" opacity="0.12"/><circle cx="335" cy="37" r="0.8" fill="#fff" opacity="0.3"/></g>
+<ellipse cx="500" cy="606" rx="300" ry="22" fill="url(#floor)"/>
+
+<g filter="url(#shadow)">
+ <g filter="url(#cloth)">
+  <path d="M418 72 L500 158 L582 72 C556 64 530 61 500 61 C470 61 444 64 418 72 Z" fill="url(#inner)"/>
+  <path d="M418 72 L500 158 L582 72 C622 80 662 92 692 108 L802 212 C792 242 772 266 746 286 L690 242 C686 330 690 420 700 542 C640 558 560 564 500 564 C440 564 360 558 300 542 C310 420 314 330 310 242 L254 286 C228 266 208 242 198 212 L308 108 C338 92 378 80 418 72 Z" fill="#f7f8f6"/>
+  <g clip-path="url(#shirtClip)">
+    <rect x="190" y="50" width="620" height="530" fill="url(#mesh)"/>
+    <rect x="190" y="50" width="620" height="530" fill="url(#shade)"/>
+    <rect x="190" y="50" width="620" height="530" fill="url(#hot)"/>
+    <rect x="190" y="50" width="620" height="530" fill="url(#rim)" opacity=".7"/>
+    <path d="M310 242 C320 330 316 440 300 542" stroke="#6b746e" stroke-width="3" fill="none" opacity=".35"/>
+    <path d="M690 242 C680 330 684 440 700 542" stroke="#4e5751" stroke-width="3" fill="none" opacity=".45"/>
+    <path d="M308 108 C318 150 316 200 310 242" stroke="#6b746e" stroke-width="2.5" fill="none" opacity=".35"/>
+    <path d="M692 108 C682 150 684 200 690 242" stroke="#4e5751" stroke-width="2.5" fill="none" opacity=".45"/>
+    <path d="M206 222 L262 274" stroke="#16251d" stroke-width="7"/>
+    <path d="M794 222 L738 274" stroke="#16251d" stroke-width="7"/>
+    <path d="M300 534 C400 552 600 552 700 534" stroke="#aab2ac" stroke-width="3" fill="none" opacity=".6"/>
+  </g>
+  <path d="M418 72 L500 158 L582 72" fill="none" stroke="#16251d" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M427 76 L500 146 L573 76" fill="none" stroke="#f2f4f2" stroke-width="2" opacity=".7"/>
+  <image id="kitCrest" x="572" y="196" width="66" height="66"/>
+  <g transform="translate(500 352)">
+    <circle cx="-112" cy="-13" r="11" fill="#2f9a48"/>
+    <text x="10" y="0" text-anchor="middle" font-family="Source Sans 3, Arial, sans-serif" font-weight="700" font-size="56" fill="#22468f" letter-spacing="1">prevent</text>
+  </g>
+ </g>
+</g>
+<rect width="1000" height="640" fill="url(#vign)"/>
+</svg></div>
+        <figcaption class="kit-caps">
+          <span><b>Bijeli dres</b> Bijela majica s tamnim V-izrezom, grbom na lijevoj strani grudi i sponzorom Prevent.</span>
+          <span><b>Zeleni dres</b> Tamnozelena majica s bijelim detaljima i sponzorom Ginex. Na leđima piše NK KOLINA USTIKOLINA iznad broja.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="podrzi" class="support">
+    <div class="wrap">
+      <div class="sec-head"><h2>Podrži klub</h2><p>Članske karte za 2026. godinu</p></div>
+      <p class="sup-lead">U 2026. godini Kolina obilježava 70 godina postojanja. Kupovinom članske karte direktno pomažete rad kluba, a imena članova klub javno objavljuje na svojoj stranici.</p>
+      <div class="tiers">
+        <div class="mc-wrap">
+          <button type="button" class="mcard mc-gold" aria-label="Članska karta GOLD, okreni karticu">
+            <span class="mc-inner">
+              <span class="mc-face mc-front">
+                <span class="mc-band top"></span><span class="mc-band bot"></span>
+                <img class="mc-crest" data-crest alt="">
+                <span class="mc-txt">
+                  <span class="mc-title">GOLD</span>
+                  <span class="mc-sub">KARTA</span>
+                  <span class="mc-club">NOGOMETNI KLUB<br>«KOLINA» USTIKOLINA</span>
+                  <span class="mc-price">200 KM+</span>
+                  <span class="mc-no">Sezona 2026 · 1956–2026</span>
+                </span>
+                <span class="mc-shine"></span>
+              </span>
+              <span class="mc-face mc-back">
+                <span class="mc-btop"><img class="mc-crest-b" data-crest alt=""></span>
+                <span class="mc-bmetal"><span class="mc-script">Klub svih nas!</span></span>
+                <span class="mc-shine"></span>
+              </span>
+            </span>
+          </button>
+          <div class="tier-info"><b>Gold karta · 200 KM i više</b><span>Za prijatelje kluba koji žele dati najveću podršku.</span></div>
+        </div>
+        <div class="mc-wrap">
+          <button type="button" class="mcard mc-jub" aria-label="Članska karta JUBILARNA, okreni karticu">
+            <span class="mc-inner">
+              <span class="mc-face mc-front">
+                <span class="mc-band top"></span><span class="mc-band bot"></span>
+                <img class="mc-crest" data-crest alt="">
+                <span class="mc-txt">
+                  <span class="mc-title">JUBILARNA</span>
+                  <span class="mc-sub">KARTA</span>
+                  <span class="mc-club">NOGOMETNI KLUB<br>«KOLINA» USTIKOLINA</span>
+                  <span class="mc-price">70 KM</span>
+                  <span class="mc-no">Sezona 2026 · 1956–2026</span>
+                </span>
+                <span class="mc-shine"></span>
+              </span>
+              <span class="mc-face mc-back">
+                <span class="mc-btop"><img class="mc-crest-b" data-crest alt=""></span>
+                <span class="mc-bmetal"><span class="mc-script">Klub svih nas!</span><span class="mc-script2">70 godina zajedno</span></span>
+                <span class="mc-shine"></span>
+              </span>
+            </span>
+          </button>
+          <div class="tier-info"><b>Jubilarna karta · 70 KM</b><span>Posebna karta za 70. rođendan kluba, 1956–2026.</span></div>
+        </div>
+        <div class="mc-wrap">
+          <button type="button" class="mcard mc-cl" aria-label="Članska karta ČLANSKA, okreni karticu">
+            <span class="mc-inner">
+              <span class="mc-face mc-front">
+                <span class="mc-band top"></span><span class="mc-band bot"></span>
+                <img class="mc-crest" data-crest alt="">
+                <span class="mc-txt">
+                  <span class="mc-title">ČLANSKA</span>
+                  <span class="mc-sub">KARTA ZA 2026.</span>
+                  <span class="mc-club">NOGOMETNI KLUB<br>«KOLINA» USTIKOLINA</span>
+                  <span class="mc-price">30 KM</span>
+                  <span class="mc-no">Sezona 2026 · 1956–2026</span>
+                </span>
+                <span class="mc-shine"></span>
+              </span>
+              <span class="mc-face mc-back">
+                <span class="mc-btop"><img class="mc-crest-b" data-crest alt=""></span>
+                <span class="mc-bmetal"><span class="mc-script">Klub svih nas!</span></span>
+                <span class="mc-shine"></span>
+              </span>
+            </span>
+          </button>
+          <div class="tier-info"><b>Članska karta · 30 KM</b><span>Za svakog navijača koji želi biti dio kluba.</span></div>
+        </div>
+      </div>
+      <p class="muted mc-hint">Dodirnite karticu da je okrenete.</p>
+      <div class="pay card">
+        <div>
+          <h3>Uplata na račun kluba</h3>
+          <p class="acc"><span id="accNo">1011400078068090</span> <button type="button" class="copy" id="copyAcc">Kopiraj broj računa</button></p>
+          <p class="muted">PBS, poslovnica Goražde · primalac NK „Kolina“ Ustikolina</p>
+        </div>
+        <div>
+          <h3>Lično</h3>
+          <p>Adis Dedović, Meho Herić, Džemal Maslo, Enes Gradišić i Sanela Mulabdić.</p>
+          <p class="muted">Klub uplate prima samo na račun ili lično kod navedenih osoba.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>Kontakt</h2><p>Javite se klubu</p></div>
+      <ul class="facts card contact">
+        <li><span>Adresa</span><span>Ustikolina bb, 73250 Ustikolina</span></li>
+        <li><span>Telefon</span><span><a href="tel:+387603213739">0603 213 739</a></span></li>
+        <li><span>E-mail</span><span><a href="mailto:nk.kolina@yahoo.com">nk.kolina@yahoo.com</a></span></li>
+        <li><span>Facebook</span><span><a href="https://www.facebook.com/nk.kolina1956/">facebook.com/nk.kolina1956</a></span></li>
+        <li><span>Instagram</span><span><a href="https://www.instagram.com/nk.kolina/">@nk.kolina</a></span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© NK Kolina Ustikolina · od 1956.</span>
+    <span>Klub svih nas · <span id="updated"></span></span>
+  </div>
+</footer>
+
+<script type="application/json" id="kdata">{"updated": "2026-11-15", "current": {"season": "2026-2027", "label": "2026/27", "competition": "JKL FS BPK Goražde", "rounds": 14, "home_venue": "Cvilin", "teams": {"Kolina": "Kolina Ustikolina", "Jahorina": "Jahorina Prača", "Azot": "Azot Vitkovići", "Drina": "Drina Goražde", "BKB": "BKB Berič", "Ilovača": "Ilovača", "Radnički": "Radnički Goražde"}, "matches": [{"r": 1, "d": "20.09.2026", "h": "Kolina", "a": "BKB", "s": "8:0"}, {"r": 1, "d": "20.09.2026", "h": "Radnički", "a": "Jahorina", "s": "2:5"}, {"r": 1, "d": "20.09.2026", "h": "Ilovača", "a": "Azot", "s": "0:3"}, {"r": 2, "d": "27.09.2026", "h": "Drina", "a": "Kolina", "s": null}, {"r": 2, "d": "27.09.2026", "h": "Jahorina", "a": "Ilovača", "s": "3:1"}, {"r": 2, "d": "27.09.2026", "h": "BKB", "a": "Radnički", "s": "4:1"}, {"r": 3, "d": "11.10.2026", "h": "Radnički", "a": "Drina", "s": "0:3"}, {"r": 3, "d": "11.10.2026", "h": "Ilovača", "a": "BKB", "s": "1:3"}, {"r": 3, "d": "11.10.2026", "h": "Azot", "a": "Jahorina", "s": "2:3"}, {"r": 4, "d": "18.10.2026", "h": "Kolina", "a": "Radnički", "s": "11:0"}, {"r": 4, "d": "18.10.2026", "h": "BKB", "a": "Azot", "s": "1:8"}, {"r": 4, "d": "18.10.2026", "h": "Drina", "a": "Ilovača", "s": "1:0"}, {"r": 5, "d": "25.10.2026", "h": "Kolina", "a": "Ilovača", "s": "4:4"}, {"r": 5, "d": "25.10.2026", "h": "Jahorina", "a": "BKB", "s": "3:0"}, {"r": 5, "d": "25.10.2026", "h": "Azot", "a": "Drina", "s": "4:0"}, {"r": 6, "d": "15.11.2026", "h": "Kolina", "a": "Azot", "s": "4:3", "g": "Polovina 3, Karahodža"}, {"r": 6, "d": "01.11.2026", "h": "Drina", "a": "Jahorina", "s": "5:4"}, {"r": 6, "d": "01.11.2026", "h": "Radnički", "a": "Ilovača", "s": "0:6"}, {"r": 7, "d": "08.11.2026", "h": "Jahorina", "a": "Kolina", "s": "5:4"}, {"r": 7, "d": "08.11.2026", "h": "Azot", "a": "Radnički", "s": "11:0"}, {"r": 7, "d": "08.11.2026", "h": "BKB", "a": "Drina", "s": null}, {"r": 8, "d": null, "h": "BKB", "a": "Kolina", "s": null}, {"r": 8, "d": null, "h": "Jahorina", "a": "Radnički", "s": null}, {"r": 8, "d": null, "h": "Azot", "a": "Ilovača", "s": null}, {"r": 9, "d": null, "h": "Ilovača", "a": "Jahorina", "s": null}, {"r": 9, "d": null, "h": "Radnički", "a": "BKB", "s": null}, {"r": 9, "d": null, "h": "Kolina", "a": "Drina", "s": null}, {"r": 10, "d": null, "h": "Drina", "a": "Radnički", "s": null}, {"r": 10, "d": null, "h": "BKB", "a": "Ilovača", "s": null}, {"r": 10, "d": null, "h": "Jahorina", "a": "Azot", "s": null}, {"r": 11, "d": null, "h": "Azot", "a": "BKB", "s": null}, {"r": 11, "d": null, "h": "Ilovača", "a": "Drina", "s": null}, {"r": 11, "d": null, "h": "Radnički", "a": "Kolina", "s": null}, {"r": 12, "d": null, "h": "Kolina", "a": "Ilovača", "s": null}, {"r": 12, "d": null, "h": "Drina", "a": "Azot", "s": null}, {"r": 12, "d": null, "h": "BKB", "a": "Jahorina", "s": null}, {"r": 13, "d": null, "h": "Jahorina", "a": "Drina", "s": null}, {"r": 13, "d": null, "h": "Azot", "a": "Kolina", "s": null}, {"r": 13, "d": null, "h": "Ilovača", "a": "Radnički", "s": null}, {"r": 14, "d": null, "h": "Radnički", "a": "Azot", "s": null}, {"r": 14, "d": null, "h": "Kolina", "a": "Jahorina", "s": null}, {"r": 14, "d": null, "h": "Drina", "a": "BKB", "s": null}]}, "history": {"2025-2026": [{"d": "24.05.2026", "h": "Kolina", "a": "Jahorina", "s": "6:1", "c": "JKL BPK"}, {"d": "17.05.2026", "h": "Drina", "a": "Kolina", "s": "3:8", "c": "JKL BPK"}, {"d": "09.05.2026", "h": "Kolina", "a": "Radnički", "s": "13:1", "c": "JKL BPK"}, {"d": "26.04.2026", "h": "Ilovača", "a": "Kolina", "s": "1:2", "c": "JKL BPK"}, {"d": "19.04.2026", "h": "Kolina", "a": "Azot", "s": "1:2", "c": "JKL BPK"}, {"d": "12.04.2026", "h": "BKB", "a": "Kolina", "s": "3:6", "c": "JKL BPK"}, {"d": "02.11.2025", "h": "Jahorina", "a": "Kolina", "s": "1:2", "c": "JKL BPK"}, {"d": "26.10.2025", "h": "Kolina", "a": "Drina", "s": "3:0", "c": "JKL BPK"}, {"d": "19.10.2025", "h": "Radnički", "a": "Kolina", "s": "0:6", "c": "JKL BPK"}, {"d": "12.10.2025", "h": "Kolina", "a": "Ilovača", "s": "0:1", "c": "JKL BPK"}, {"d": "05.10.2025", "h": "Azot", "a": "Kolina", "s": "1:6", "c": "JKL BPK"}, {"d": "28.09.2025", "h": "Kolina", "a": "BKB", "s": "4:1", "c": "JKL BPK"}, {"d": "23.09.2025", "h": "Kolina", "a": "Sloboda", "s": "0:7", "c": "Kup FBiH"}], "2024-2025": [{"d": "08.06.2025", "h": "Kolina", "a": "Bosna", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "31.05.2025", "h": "UNIS", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "25.05.2025", "h": "Kolina", "a": "Žepče", "s": "0:0", "c": "Druga liga FBiH Centar"}, {"d": "21.05.2025", "h": "Liješeva", "a": "Kolina", "s": "3:2", "c": "Druga liga FBiH Centar"}, {"d": "18.05.2025", "h": "Natron", "a": "Kolina", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "11.05.2025", "h": "Kolina", "a": "Usora", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "03.05.2025", "h": "Mladost", "a": "Kolina", "s": "2:3", "c": "Druga liga FBiH Centar"}, {"d": "27.04.2025", "h": "Kolina", "a": "Nemila", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "19.04.2025", "h": "Baton", "a": "Kolina", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "13.04.2025", "h": "Kolina", "a": "Mošćanica", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "06.04.2025", "h": "Stup", "a": "Kolina", "s": "0:2", "c": "Druga liga FBiH Centar"}, {"d": "29.03.2025", "h": "Kolina", "a": "Rudar", "s": "2:2", "c": "Druga liga FBiH Centar"}, {"d": "22.03.2025", "h": "Famos", "a": "Kolina", "s": "1:5", "c": "Druga liga FBiH Centar"}, {"d": "16.03.2025", "h": "Kolina", "a": "Krivaja", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "08.03.2025", "h": "Borac", "a": "Kolina", "s": "0:0", "c": "Druga liga FBiH Centar"}, {"d": "23.11.2024", "h": "Bosna", "a": "Kolina", "s": "3:1", "c": "Druga liga FBiH Centar"}, {"d": "17.11.2024", "h": "Kolina", "a": "UNIS", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "10.11.2024", "h": "Žepče", "a": "Kolina", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "03.11.2024", "h": "Kolina", "a": "Liješeva", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "27.10.2024", "h": "Kolina", "a": "Natron", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "20.10.2024", "h": "Usora", "a": "Kolina", "s": "0:3", "c": "Druga liga FBiH Centar"}, {"d": "16.10.2024", "h": "Nemila", "a": "Kolina", "s": "3:2", "c": "Druga liga FBiH Centar"}, {"d": "13.10.2024", "h": "Kolina", "a": "Mladost", "s": "0:2", "c": "Druga liga FBiH Centar"}, {"d": "29.09.2024", "h": "Kolina", "a": "Baton", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "25.09.2024", "h": "Kolina", "a": "Stupčanica", "s": "0:3", "c": "Kup FBiH"}, {"d": "21.09.2024", "h": "Mošćanica", "a": "Kolina", "s": "3:3", "c": "Druga liga FBiH Centar"}, {"d": "15.09.2024", "h": "Kolina", "a": "Stup", "s": "6:0", "c": "Druga liga FBiH Centar"}, {"d": "11.09.2024", "h": "Kolina", "a": "Stolac", "s": "3:2", "c": "Kup FBiH"}, {"d": "08.09.2024", "h": "Rudar", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "01.09.2024", "h": "Kolina", "a": "Famos", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "24.08.2024", "h": "Krivaja", "a": "Kolina", "s": "0:0", "c": "Druga liga FBiH Centar"}, {"d": "18.08.2024", "h": "Kolina", "a": "Borac", "s": "3:0", "c": "Druga liga FBiH Centar"}], "2023-2024": [{"d": "08.06.2024", "h": "Kolina", "a": "Moševac", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "02.06.2024", "h": "Rudar", "a": "Kolina", "s": "1:2", "c": "Druga liga FBiH Centar"}, {"d": "25.05.2024", "h": "Kolina", "a": "Nemila", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "18.05.2024", "h": "Famos", "a": "Kolina", "s": "4:2", "c": "Druga liga FBiH Centar"}, {"d": "12.05.2024", "h": "Kolina", "a": "Igman", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "08.05.2024", "h": "Borac", "a": "Kolina", "s": "6:0", "c": "Druga liga FBiH Centar"}, {"d": "05.05.2024", "h": "Kolina", "a": "UNIS", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "27.04.2024", "h": "Bosna", "a": "Kolina", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "21.04.2024", "h": "Kolina", "a": "Natron", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "17.04.2024", "h": "Usora", "a": "Kolina", "s": "3:1", "c": "Druga liga FBiH Centar"}, {"d": "14.04.2024", "h": "Kolina", "a": "Ilijaš", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "07.04.2024", "h": "Žepče 1919", "a": "Kolina", "s": "3:1", "c": "Druga liga FBiH Centar"}, {"d": "30.03.2024", "h": "Kolina", "a": "Mošćanica", "s": "0:3", "c": "Druga liga FBiH Centar"}, {"d": "24.03.2024", "h": "Krivaja", "a": "Kolina", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "17.03.2024", "h": "Baton", "a": "Kolina", "s": "2:2", "c": "Druga liga FBiH Centar"}, {"d": "19.11.2023", "h": "Moševac", "a": "Kolina", "s": "1:2", "c": "Druga liga FBiH Centar"}, {"d": "12.11.2023", "h": "Kolina", "a": "Rudar", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "04.11.2023", "h": "Nemila", "a": "Kolina", "s": "1:4", "c": "Druga liga FBiH Centar"}, {"d": "29.10.2023", "h": "Kolina", "a": "Famos", "s": "0:2", "c": "Druga liga FBiH Centar"}, {"d": "22.10.2023", "h": "Igman", "a": "Kolina", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "15.10.2023", "h": "Kolina", "a": "Borac", "s": "0:2", "c": "Druga liga FBiH Centar"}, {"d": "11.10.2023", "h": "UNIS", "a": "Kolina", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "08.10.2023", "h": "Kolina", "a": "Bosna", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "01.10.2023", "h": "Natron", "a": "Kolina", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "24.09.2023", "h": "Kolina", "a": "Usora", "s": "2:4", "c": "Druga liga FBiH Centar"}, {"d": "16.09.2023", "h": "Ilijaš", "a": "Kolina", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "10.09.2023", "h": "Kolina", "a": "Žepče 1919", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "02.09.2023", "h": "Mošćanica", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "30.08.2023", "h": "Čelični grad", "a": "Kolina", "s": "5:1", "c": "Kup FBiH"}, {"d": "27.08.2023", "h": "Kolina", "a": "Krivaja", "s": "5:1", "c": "Druga liga FBiH Centar"}, {"d": "20.08.2023", "h": "Kolina", "a": "Baton", "s": "1:2", "c": "Druga liga FBiH Centar"}], "2022-2023": [{"d": "04.06.2023", "h": "Kolina", "a": "Azot", "s": "3:2", "c": "Druga liga FBiH Centar"}, {"d": "28.05.2023", "h": "Usora", "a": "Kolina", "s": "4:3", "c": "Druga liga FBiH Centar"}, {"d": "21.05.2023", "h": "Kolina", "a": "Čelik", "s": "0:4", "c": "Druga liga FBiH Centar"}, {"d": "13.05.2023", "h": "Borac", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "10.05.2023", "h": "Kolina", "a": "Krivaja", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "07.05.2023", "h": "Baton", "a": "Kolina", "s": "4:2", "c": "Druga liga FBiH Centar"}, {"d": "30.04.2023", "h": "Kolina", "a": "Mošćanica", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "23.04.2023", "h": "Bosna", "a": "Kolina", "s": "3:3", "c": "Druga liga FBiH Centar"}, {"d": "16.04.2023", "h": "Kolina", "a": "Ilijaš", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "12.04.2023", "h": "Žepče", "a": "Kolina", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "08.04.2023", "h": "Kolina", "a": "Rudar", "s": "4:0", "c": "Druga liga FBiH Centar"}, {"d": "02.04.2023", "h": "Moševac", "a": "Kolina", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "26.03.2023", "h": "Kolina", "a": "Natron", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "18.03.2023", "h": "UNIS", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "12.03.2023", "h": "Kolina", "a": "Famos", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "20.11.2022", "h": "Azot", "a": "Kolina", "s": "0:3", "c": "Druga liga FBiH Centar"}, {"d": "13.11.2022", "h": "Kolina", "a": "Usora", "s": "6:2", "c": "Druga liga FBiH Centar"}, {"d": "06.11.2022", "h": "Čelik", "a": "Kolina", "s": "4:2", "c": "Druga liga FBiH Centar"}, {"d": "30.10.2022", "h": "Kolina", "a": "Borac", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "22.10.2022", "h": "Krivaja", "a": "Kolina", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "19.10.2022", "h": "Kolina", "a": "Posušje", "s": "1:5", "c": "Kup BiH"}, {"d": "16.10.2022", "h": "Kolina", "a": "Baton", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "09.10.2022", "h": "Mošćanica", "a": "Kolina", "s": "0:2", "c": "Druga liga FBiH Centar"}, {"d": "05.10.2022", "h": "Kolina", "a": "Radnički (L)", "s": "4:2", "c": "Kup FBiH"}, {"d": "02.10.2022", "h": "Kolina", "a": "Bosna", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "25.09.2022", "h": "Ilijaš", "a": "Kolina", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "18.09.2022", "h": "Kolina", "a": "Žepče", "s": "3:2", "c": "Druga liga FBiH Centar"}, {"d": "14.09.2022", "h": "Fojnica", "a": "Kolina", "s": "0:8", "c": "Kup FBiH"}, {"d": "10.09.2022", "h": "Rudar", "a": "Kolina", "s": "0:3", "c": "Druga liga FBiH Centar"}, {"d": "04.09.2022", "h": "Kolina", "a": "Moševac", "s": "3:2", "c": "Druga liga FBiH Centar"}, {"d": "28.08.2022", "h": "Natron", "a": "Kolina", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "21.08.2022", "h": "Kolina", "a": "UNIS", "s": "3:2", "c": "Druga liga FBiH Centar"}, {"d": "14.08.2022", "h": "Famos", "a": "Kolina", "s": "1:2", "c": "Druga liga FBiH Centar"}], "2021-2022": [{"d": "05.06.2022", "h": "Rudar", "a": "Kolina", "s": "1:6", "c": "Druga liga FBiH Centar"}, {"d": "28.05.2022", "h": "Kolina", "a": "Baton", "s": "7:0", "c": "Druga liga FBiH Centar"}, {"d": "22.05.2022", "h": "Čelik", "a": "Kolina", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "15.05.2022", "h": "Kolina", "a": "Borac", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "11.05.2022", "h": "Famos", "a": "Kolina", "s": "2:3", "c": "Druga liga FBiH Centar"}, {"d": "08.05.2022", "h": "Kolina", "a": "Moševac", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "30.04.2022", "h": "UNIS", "a": "Kolina", "s": "1:2", "c": "Druga liga FBiH Centar"}, {"d": "24.04.2022", "h": "Kolina", "a": "Krivaja", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "16.04.2022", "h": "Stupčanica", "a": "Kolina", "s": "4:0", "c": "Druga liga FBiH Centar"}, {"d": "13.04.2022", "h": "Kolina", "a": "Jahorina", "s": "8:0", "c": "Druga liga FBiH Centar"}, {"d": "02.04.2022", "h": "Bosna", "a": "Kolina", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "27.03.2022", "h": "Kolina", "a": "Mošćanica", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "20.03.2022", "h": "Kolina", "a": "Natron", "s": "4:0", "c": "Druga liga FBiH Centar"}, {"d": "13.03.2022", "h": "Azot", "a": "Kolina", "s": "1:2", "c": "Druga liga FBiH Centar"}, {"d": "06.03.2022", "h": "Kolina", "a": "Usora", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "21.11.2021", "h": "Kolina", "a": "Rudar", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "14.11.2021", "h": "Baton", "a": "Kolina", "s": "2:2", "c": "Druga liga FBiH Centar"}, {"d": "07.11.2021", "h": "Kolina", "a": "Čelik", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "30.10.2021", "h": "Borac", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "24.10.2021", "h": "Kolina", "a": "Famos", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "17.10.2021", "h": "Moševac", "a": "Kolina", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "10.10.2021", "h": "Kolina", "a": "UNIS", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "02.10.2021", "h": "Krivaja", "a": "Kolina", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "26.09.2021", "h": "Kolina", "a": "Stupčanica", "s": "1:2", "c": "Druga liga FBiH Centar"}, {"d": "19.09.2021", "h": "Jahorina", "a": "Kolina", "s": "0:5", "c": "Druga liga FBiH Centar"}, {"d": "12.09.2021", "h": "Kolina", "a": "Bosna", "s": "2:2", "c": "Druga liga FBiH Centar"}, {"d": "05.09.2021", "h": "Mošćanica", "a": "Kolina", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "29.08.2021", "h": "Natron", "a": "Kolina", "s": "3:1", "c": "Druga liga FBiH Centar"}, {"d": "25.08.2021", "h": "Rudar (HB)", "a": "Kolina", "s": "4:2", "c": "Kup FBiH"}, {"d": "22.08.2021", "h": "Kolina", "a": "Azot", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "15.08.2021", "h": "Usora", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}], "2020-2021": [{"d": "06.06.2021", "h": "Kolina", "a": "SAŠK Napredak", "s": "4:0", "c": "Druga liga FBiH Centar"}, {"d": "30.05.2021", "h": "Ilijaš", "a": "Kolina", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "23.05.2021", "h": "Kolina", "a": "Azot", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "19.05.2021", "h": "Rudar", "a": "Kolina", "s": "2:2", "c": "Druga liga FBiH Centar"}, {"d": "16.05.2021", "h": "Kolina", "a": "Moševac", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "08.05.2021", "h": "Krivaja", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "02.05.2021", "h": "Kolina", "a": "Borac", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "25.04.2021", "h": "Usora", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "18.04.2021", "h": "Kolina", "a": "Bosna", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "11.04.2021", "h": "Mošćanica", "a": "Kolina", "s": "0:1", "c": "Druga liga FBiH Centar"}, {"d": "04.04.2021", "h": "Stupčanica", "a": "Kolina", "s": "4:0", "c": "Druga liga FBiH Centar"}, {"d": "28.03.2021", "h": "Kolina", "a": "Famos", "s": "3:1", "c": "Druga liga FBiH Centar"}, {"d": "21.03.2021", "h": "Natron", "a": "Kolina", "s": "1:1", "c": "Druga liga FBiH Centar"}, {"d": "14.03.2021", "h": "Kolina", "a": "UNIS", "s": "0:0", "c": "Druga liga FBiH Centar"}, {"d": "07.03.2021", "h": "Pobjeda", "a": "Kolina", "s": "2:2", "c": "Druga liga FBiH Centar"}, {"d": "15.11.2020", "h": "SAŠK Napredak", "a": "Kolina", "s": "1:3", "c": "Druga liga FBiH Centar"}, {"d": "08.11.2020", "h": "Kolina", "a": "Ilijaš", "s": "5:0", "c": "Druga liga FBiH Centar"}, {"d": "01.11.2020", "h": "Azot", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "25.10.2020", "h": "Kolina", "a": "Rudar", "s": "3:1", "c": "Druga liga FBiH Centar"}, {"d": "18.10.2020", "h": "Moševac", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "11.10.2020", "h": "Kolina", "a": "Krivaja", "s": "3:0", "c": "Druga liga FBiH Centar"}, {"d": "04.10.2020", "h": "Borac", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "27.09.2020", "h": "Kolina", "a": "Usora", "s": "2:1", "c": "Druga liga FBiH Centar"}, {"d": "19.09.2020", "h": "Bosna", "a": "Kolina", "s": "4:1", "c": "Druga liga FBiH Centar"}, {"d": "13.09.2020", "h": "Kolina", "a": "Mošćanica", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "06.09.2020", "h": "Kolina", "a": "Stupčanica", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "29.08.2020", "h": "Famos", "a": "Kolina", "s": "2:0", "c": "Druga liga FBiH Centar"}, {"d": "26.08.2020", "h": "UNIS", "a": "Kolina", "s": "2:1", "c": "Kup FBiH"}, {"d": "23.08.2020", "h": "Kolina", "a": "Natron", "s": "1:2", "c": "Druga liga FBiH Centar"}, {"d": "15.08.2020", "h": "UNIS", "a": "Kolina", "s": "1:0", "c": "Druga liga FBiH Centar"}, {"d": "09.08.2020", "h": "Kolina", "a": "Pobjeda", "s": "3:0", "c": "Druga liga FBiH Centar"}], "2019-2020": [{"d": "20.10.2019", "h": "Drina", "a": "Kolina", "s": "0:3", "c": "Kantonalna liga BPK"}, {"d": "06.10.2019", "h": "Kolina", "a": "BKB", "s": "2:1", "c": "Kantonalna liga BPK"}, {"d": "29.09.2019", "h": "Jahorina", "a": "Kolina", "s": "0:4", "c": "Kantonalna liga BPK"}, {"d": "22.09.2019", "h": "Kolina", "a": "Radnički", "s": "9:0", "c": "Kantonalna liga BPK"}], "2018-2019": [{"d": "02.06.2019", "h": "Radnički", "a": "Kolina", "s": "1:9", "c": "Kantonalna liga BPK"}, {"d": "26.05.2019", "h": "Kolina", "a": "Drina", "s": "4:1", "c": "Kantonalna liga BPK"}, {"d": "12.05.2019", "h": "BKB", "a": "Kolina", "s": "2:6", "c": "Kantonalna liga BPK"}, {"d": "05.05.2019", "h": "Jahorina", "a": "Kolina", "s": "0:1", "c": "Kantonalna liga BPK"}, {"d": "04.11.2018", "h": "Kolina", "a": "Radnički", "s": "8:2", "c": "Kantonalna liga BPK"}, {"d": "28.10.2018", "h": "Drina", "a": "Kolina", "s": "2:4", "c": "Kantonalna liga BPK"}, {"d": "14.10.2018", "h": "Kolina", "a": "BKB", "s": "6:1", "c": "Kantonalna liga BPK"}, {"d": "07.10.2018", "h": "Kolina", "a": "Jahorina", "s": "8:2", "c": "Kantonalna liga BPK"}]}, "summary": {"2025-2026": "JKL BPK · 10 pobjeda, 2 poraza · golovi 57:15 · 30 bodova", "2024-2025": "Druga liga FBiH Centar · 6. mjesto · 13-9-8 · golovi 50:31 · 48 bodova", "2023-2024": "Druga liga FBiH Centar · 10. mjesto · 12-4-14 · golovi 45:53 · 40 bodova", "2022-2023": "Druga liga FBiH Centar · 4. mjesto · 19-2-9 · golovi 61:42 · 59 bodova", "2021-2022": "Druga liga FBiH Centar · 7. mjesto · 14-4-12 · golovi 66:38 · 46 bodova", "2020-2021": "Druga liga FBiH Centar · 7. mjesto · 13-6-11 · golovi 45:36 · 45 bodova", "2019-2020": "Kantonalna liga BPK · 4 pobjede iz 4 utakmice · sezona nije završena", "2018-2019": "Kantonalna liga BPK · prvak · 8 pobjeda iz 8 utakmica · golovi 46:11"}}</script>
+<script>
+let KD=JSON.parse(document.getElementById("kdata").textContent);
+const list=document.getElementById("results"), sumEl=document.getElementById("seasonSum");
+const pd=d=>{ if(!d) return 0; const [a,b,c]=d.split("."); return +new Date(+c,+b-1,+a); };
+const short=n=>n;
+function outcome(m){ const [x,y]=m.s.split(":").map(Number); const us=m.h==="Kolina"?x-y:y-x; return us>0?["w","P","Pobjeda"]:us<0?["l","I","Poraz"]:["","N","Neriješeno"]; }
+function liRow(m,c){
+  if(!m.s) return `<li class="res"><span class="pill" aria-label="Bez rezultata">–</span><span class="who">${m.h} – ${m.a}<small>${m.d||""} · ${c}</small></span><span class="score">–:–</span></li>`;
+  const [cls,l,al]=outcome(m);
+  return `<li class="res ${cls}"><span class="pill" aria-label="${al}">${l}</span><span class="who">${m.h} – ${m.a}<small>${m.d} · ${c}</small></span><span class="score">${m.s}</span></li>`;
+}
+function cur(){ return KD.current; }
+function played(){ return cur().matches.filter(m=>m.s); }
+function maxRound(){ return Math.max(0,...played().map(m=>m.r)); }
+function kolinaCurrent(){
+  const mr=maxRound();
+  return cur().matches.filter(m=>(m.h==="Kolina"||m.a==="Kolina")&&(m.s||m.r<=mr)).sort((a,b)=>pd(b.d)-pd(a.d)||b.r-a.r);
+}
+function curSummary(){
+  let w=0,d=0,l=0,gf=0,ga=0;
+  played().filter(m=>m.h==="Kolina"||m.a==="Kolina").forEach(m=>{const [x,y]=m.s.split(":").map(Number);const f=m.h==="Kolina"?x:y,g=m.h==="Kolina"?y:x;gf+=f;ga+=g;f>g?w++:f<g?l++:d++;});
+  const pl=(n,a,b,c)=>n+" "+(n%10===1&&n%100!==11?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c);
+  return `Sezona u toku · ${pl(w,"pobjeda","pobjede","pobjeda")}, ${pl(d,"neriješeno","neriješena","neriješenih")}, ${pl(l,"poraz","poraza","poraza")} · golovi ${gf}:${ga}`;
+}
+function showSeason(k){
+  if(k===cur().season){
+    sumEl.textContent=curSummary();
+    list.innerHTML=kolinaCurrent().map(m=>liRow(m,cur().competition+(m.g?" · "+m.g:""))).join("");
+  } else {
+    sumEl.textContent=KD.summary[k]||"";
+    list.innerHTML=(KD.history[k]||[]).map(m=>liRow(m,m.c)).join("");
+  }
+}
+function renderTable(){
+  const T={}; Object.keys(cur().teams).forEach(t=>T[t]={t,u:0,p:0,n:0,i:0,f:0,a:0});
+  played().forEach(m=>{const [x,y]=m.s.split(":").map(Number);[[m.h,x,y],[m.a,y,x]].forEach(([t,f,a])=>{const r=T[t]||(T[t]={t,u:0,p:0,n:0,i:0,f:0,a:0});r.u++;r.f+=f;r.a+=a;f>a?r.p++:f<a?r.i++:r.n++;});});
+  const rows=Object.values(T).map(r=>({...r,b:3*r.p+r.n,gr:r.f-r.a})).sort((A,B)=>B.b-A.b||B.gr-A.gr||B.f-A.f||A.t.localeCompare(B.t));
+  document.getElementById("tblBody").innerHTML=rows.map((r,i)=>`<tr${r.t==="Kolina"?' class="us"':''}><td>${i+1}</td><td>${cur().teams[r.t]||r.t}</td><td>${r.u}</td><td>${r.p}</td><td>${r.n}</td><td>${r.i}</td><td>${r.f}:${r.a}</td><td>${r.gr>0?"+"+r.gr:r.gr<0?"−"+(-r.gr):0}</td><td>${r.b}</td></tr>`).join("");
+  const mr=maxRound(), miss=cur().matches.filter(m=>!m.s&&m.r<=mr);
+  const lastD=played().map(m=>m.d).sort((a,b)=>pd(b)-pd(a))[0]||"";
+  document.getElementById("tblNote").textContent=`Nakon ${mr}. kola, ${lastD}.`+(miss.length?` Bez rezultata: ${miss.map(m=>`${m.h} – ${m.a} (${m.r}. kolo)`).join(", ")}.`:"");
+}
+function renderFixtures(){
+  const mr=maxRound(), N=cur().rounds, out=[];
+  for(let r=mr+1;r<=N;r++){
+    const m=cur().matches.find(x=>x.r===r&&(x.h==="Kolina"||x.a==="Kolina"));
+    if(!m){ out.push(`<li class="fx bye"><span class="rd">${r}. kolo</span><span class="pair">Kolina je slobodna</span><span class="when">bez utakmice</span></li>`); continue; }
+    const when=[m.h==="Kolina"?cur().home_venue:"gostovanje", m.d?m.d+(m.time?" u "+m.time:""):"termin uskoro"].join(" · ");
+    out.push(`<li class="fx"><span class="rd">${r}. kolo</span><span class="pair">${m.h==="Kolina"?"Kolina":(cur().teams[m.h]||m.h)} – ${m.a==="Kolina"?"Kolina":(cur().teams[m.a]||m.a)}</span><span class="when">${when}</span></li>`);
+  }
+  document.getElementById("fixtures").innerHTML=out.join("")||'<li class="fx bye"><span class="pair">Sezona je završena</span></li>';
+}
+let cdTimer=null;
+function renderHero(){
+  const mr=maxRound();
+  const nx=cur().matches.filter(m=>!m.s&&m.r>mr&&(m.h==="Kolina"||m.a==="Kolina")).sort((a,b)=>a.r-b.r)[0];
+  const ls=played().filter(m=>m.h==="Kolina"||m.a==="Kolina").sort((a,b)=>pd(b.d)-pd(a.d))[0];
+  const T=n=>(n==="Kolina"?"Kolina":(cur().teams[n]||n));
+  document.getElementById("nextLbl").textContent=nx?`Sljedeća utakmica · ${nx.r}. kolo`:"Sezona";
+  document.getElementById("nxH").textContent=nx?T(nx.h):"–";
+  document.getElementById("nxA").textContent=nx?T(nx.a):"–";
+  document.getElementById("lsScore").textContent=ls?`${ls.h} ${ls.s} ${ls.a}`:"–";
+  document.getElementById("lsGoals").textContent=ls&&ls.g?ls.g:(ls?ls.d:"");
+  const el=document.getElementById("countdown"); clearInterval(cdTimer);
+  if(!nx||!nx.kickoff){ el.textContent=nx&&nx.d?`${nx.d}${nx.time?" u "+nx.time:""}`:"Termin još nije objavljen"; return; }
+  const t=new Date(nx.kickoff).getTime();
+  const tick=()=>{ const d=t-Date.now(); if(d<=0){el.textContent="Utakmica je u toku ili završena";return;} const dd=Math.floor(d/864e5),hh=Math.floor(d%864e5/36e5),mm=Math.floor(d%36e5/6e4); el.textContent=`${dd} d · ${hh} h · ${mm} min do početka`; };
+  tick(); cdTimer=setInterval(tick,30000);
+}
+function renderAll(){
+  renderTable(); renderFixtures(); renderHero();
+  const sel=document.querySelector('.season-tabs button[aria-pressed="true"]');
+  showSeason(sel?sel.dataset.s:cur().season);
+  const u=document.getElementById("updated"); if(u&&KD.updated){const [y,mo,d]=KD.updated.split("-"); u.textContent=`podaci ažurirani ${d}.${mo}.${y}.`;}
+}
+renderAll();
+fetch("data.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.current&&d.updated>=KD.updated){ KD=d; renderAll(); } }).catch(()=>{});
+document.querySelectorAll(".season-tabs button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".season-tabs button").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true"); showSeason(b.dataset.s);
+}));
+
+
+(function removeFlutter(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelectorAll(".flutter").forEach(a=>a.remove());})();
+(function(){const k=document.getElementById("kitCrest"),src=document.querySelector(".crest-sm")?.src;if(k&&src)k.setAttribute("href",src);})();
+(function(){
+  const c=document.getElementById("river"),x=c.getContext("2d");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let t=0;
+  function size(){c.width=c.offsetWidth*devicePixelRatio;c.height=c.offsetHeight*devicePixelRatio;}
+  function draw(){
+    const w=c.width,h=c.height;x.clearRect(0,0,w,h);
+    for(let i=0;i<7;i++){
+      x.beginPath();
+      const base=h*(0.35+i*0.1),amp=10*devicePixelRatio+i*2;
+      for(let px=0;px<=w;px+=8){
+        const y=base+Math.sin(px/(140*devicePixelRatio)+t+i*0.7)*amp;
+        px?x.lineTo(px,y):x.moveTo(px,y);
+      }
+      x.strokeStyle=i%3===0?"rgba(229,166,35,.55)":"rgba(255,255,255,.35)";
+      x.lineWidth=1.5*devicePixelRatio;x.stroke();
+    }
+    t+=0.008;if(!reduce)requestAnimationFrame(draw);
+  }
+  size();addEventListener("resize",size);draw();
+})();
+</script>
+<script>
+function startKit3D(){
+  const stage=document.getElementById("kitStage"), cv=document.getElementById("kit3d");
+  if(!stage||!cv||!window.THREE) return;
+  let renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:false}); }catch(e){ return; }
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=0.78;
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+
+  const scene=new THREE.Scene();
+  scene.background=new THREE.Color(0x030605);
+  scene.fog=new THREE.FogExp2(0x040907,0.014);
+  const camera=new THREE.PerspectiveCamera(34,1000/640,0.1,100);
+  camera.position.set(0,0.15,11.5); camera.lookAt(0,0,0);
+
+  /* ---------- tekstura dresa ---------- */
+  const SH="M418 72 L500 158 L582 72 C622 80 662 92 692 108 L802 212 C792 242 772 266 746 286 L690 242 C686 330 690 420 700 542 C640 558 560 564 500 564 C440 564 360 558 300 542 C310 420 314 330 310 242 L254 286 C228 266 208 242 198 212 L308 108 C338 92 378 80 418 72 Z";
+  const KITS={
+    home:{base:"#f6f7f5",inner:"#7f8882",trim:"#16251d",seam:"rgba(110,118,112,.45)",side:"rgba(120,130,124,.18)",sp:"prevent",spCol:"#22468f",dot:"#2f9a48"},
+    away:{base:"#0d4a26",inner:"#072a15",trim:"#f2f4f2",seam:"rgba(8,40,22,.55)",side:"rgba(6,30,16,.35)",sp:"GINEX",spCol:"#ffffff",dot:null}
+  };
+  let crestImg=null;
+  function makeTex(kit){
+    const tc=document.createElement("canvas"); tc.width=tc.height=1024;
+    const tx=tc.getContext("2d");
+    const tex=new THREE.CanvasTexture(tc); tex.encoding=THREE.sRGBEncoding; tex.anisotropy=8;
+    function draw(){
+      const crest=crestImg;
+      tx.clearRect(0,0,1024,1024);
+      tx.save(); tx.translate(31,112); tx.scale(1.6,1.6); tx.translate(-198,-61);
+      const shirt=new Path2D(SH);
+      tx.fillStyle=kit.inner; tx.fill(new Path2D("M418 72 L500 158 L582 72 C556 64 530 61 500 61 C470 61 444 64 418 72 Z"));
+      tx.fillStyle=kit.base; tx.fill(shirt);
+      tx.save(); tx.clip(shirt);
+      const g=tx.createLinearGradient(198,0,802,0);
+      g.addColorStop(0,kit.side); g.addColorStop(.2,"rgba(255,255,255,0)"); g.addColorStop(.8,"rgba(255,255,255,0)"); g.addColorStop(1,kit.side);
+      tx.fillStyle=g; tx.fillRect(190,50,620,530);
+      tx.strokeStyle=kit.seam; tx.lineWidth=2.2;
+      ["M310 242 C320 330 316 440 300 542","M690 242 C680 330 684 440 700 542","M308 108 C318 150 316 200 310 242","M692 108 C682 150 684 200 690 242","M300 534 C400 552 600 552 700 534"].forEach(d=>tx.stroke(new Path2D(d)));
+      tx.strokeStyle=kit.trim; tx.lineWidth=8;
+      tx.stroke(new Path2D("M206 222 L262 274")); tx.stroke(new Path2D("M794 222 L738 274"));
+      tx.restore();
+      tx.strokeStyle=kit.trim; tx.lineWidth=9; tx.lineJoin="round"; tx.lineCap="round";
+      tx.stroke(new Path2D("M418 72 L500 158 L582 72"));
+      if(crest){ if(!kit.dot){ tx.fillStyle="#ffffff"; tx.beginPath(); tx.arc(605,229,35,0,Math.PI*2); tx.fill(); } tx.drawImage(crest,572,196,66,66); }
+      tx.fillStyle=kit.spCol; tx.textAlign="center"; tx.textBaseline="alphabetic";
+      if(kit.dot){ tx.fillStyle=kit.dot; tx.beginPath(); tx.arc(388,339,11,0,Math.PI*2); tx.fill(); tx.fillStyle=kit.spCol; tx.font="700 56px 'Source Sans 3', Arial, sans-serif"; tx.fillText(kit.sp,510,352); }
+      else { tx.font="800 60px 'Barlow Condensed', 'Arial Narrow', sans-serif"; tx.fillText(kit.sp,500,356); }
+      tx.restore();
+      tex.needsUpdate=true;
+    }
+    draw();
+    return {tex,draw};
+  }
+  const texHome=makeTex(KITS.home), texAway=makeTex(KITS.away);
+  const redraw=()=>{texHome.draw();texAway.draw();};
+  const ci=new Image(); const src=document.querySelector(".crest-sm")?.src;
+  if(src){ ci.onload=()=>{crestImg=ci;redraw();}; ci.src=src; }
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(redraw);
+
+  /* ---------- dresovi ---------- */
+  const W=6, SEG=56;
+  function makeShirt(t,phase){
+    const geo=new THREE.PlaneGeometry(W,W,SEG,SEG);
+    const base=geo.attributes.position.array.slice();
+    const mat=new THREE.MeshStandardMaterial({map:t.tex,roughness:.72,metalness:0,side:THREE.DoubleSide,alphaTest:.5});
+    const m=new THREE.Mesh(geo,mat);
+    m.castShadow=true;
+    m.customDepthMaterial=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking,map:t.tex,alphaTest:.5});
+    scene.add(m);
+    return {m,geo,base,phase};
+  }
+  const shirts=[makeShirt(texHome,0),makeShirt(texAway,2.1)];
+  function flutterOne(o,t,turn){
+    const p=o.geo.attributes.position.array, b=o.base; t+=o.phase;
+    for(let i=0;i<p.length;i+=3){
+      const x=b[i], y=b[i+1];
+      const body=0.32*Math.max(0,1-(x*x)/7.5);
+      p[i]=x+0.035*Math.sin(1.9*y+t*1.3);
+      p[i+1]=y+0.025*Math.sin(1.7*x+t*1.1);
+      p[i+2]=body
+        +0.26*Math.sin(1.35*x+t*1.6+0.6*y)*(0.65+0.35*Math.sin(0.8*y-t*0.7))
+        +0.11*Math.sin(2.9*y-t*2.1+1.3*x)
+        +0.06*Math.sin(4.1*(x+y)+t*2.6)
+        +0.035*Math.sin(5.2*x-3.7*y+t*2.8);
+    }
+    o.geo.attributes.position.needsUpdate=true;
+    o.geo.computeVertexNormals();
+    o.m.rotation.y=turn+0.16*Math.sin(t*0.35);
+    o.m.rotation.x=0.04*Math.sin(t*0.5);
+  }
+  let stacked=false;
+  function layout(){
+    if(stacked){ shirts[0].m.position.set(0,2.75,0); shirts[1].m.position.set(0,-2.95,0); }
+    else { shirts[0].m.position.set(-3.25,-0.05,0); shirts[1].m.position.set(3.25,-0.05,0); }
+  }
+  function flutter(t){
+    flutterOne(shirts[0],t,stacked?0:0.12);
+    flutterOne(shirts[1],t,stacked?0:-0.12);
+  }
+
+  /* ---------- zid ---------- */
+  const wall=new THREE.Mesh(new THREE.PlaneGeometry(60,40),new THREE.MeshStandardMaterial({color:0x06100b,roughness:1}));
+  wall.position.z=-6; wall.receiveShadow=true; scene.add(wall);
+  const floor=new THREE.Mesh(new THREE.PlaneGeometry(60,40),new THREE.MeshStandardMaterial({color:0x08110c,roughness:.9}));
+  floor.rotation.x=-Math.PI/2; floor.position.y=-6.5; floor.receiveShadow=true; scene.add(floor);
+
+  /* ---------- svjetla ---------- */
+  scene.add(new THREE.HemisphereLight(0xc8d8ce,0x050806,0.16));
+  function spot(color,int,pos,angle){
+    const s=new THREE.SpotLight(color,int,40,angle,0.55,1.4);
+    s.position.set(...pos); s.target.position.set(0,-0.3,0); s.angle=angle*1.6;
+    s.castShadow=true; s.shadow.mapSize.set(512,512); s.shadow.bias=-0.0015; s.shadow.normalBias=0.06; s.shadow.radius=4;
+    scene.add(s,s.target); return s;
+  }
+  const L1=spot(0xfff0d0,4.6,[-9,6.5,5],0.36);
+  const L2=spot(0xcfe2ff,1.7,[8,5,6],0.32); L2.castShadow=false;
+  const rim=new THREE.PointLight(0x9fd6b4,0.9,14); rim.position.set(3.5,2,-2.4); scene.add(rim);
+
+  /* ---------- volumetrijski snopovi ---------- */
+  const beamMat=c=>new THREE.ShaderMaterial({
+    transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,side:THREE.DoubleSide,
+    uniforms:{col:{value:new THREE.Color(c)}},
+    vertexShader:"varying vec2 vUv;varying vec3 vN;varying vec3 vV;void main(){vUv=uv;vec4 mv=modelViewMatrix*vec4(position,1.);vN=normalize(normalMatrix*normal);vV=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}",
+    fragmentShader:"uniform vec3 col;varying vec2 vUv;varying vec3 vN;varying vec3 vV;void main(){float e=pow(abs(dot(vN,vV)),1.6);float a=pow(vUv.y,1.2)*e*.22;gl_FragColor=vec4(col*a,a);}"
+  });
+  function beam(light,c,r){
+    const from=light.position.clone(), to=new THREE.Vector3(0,-4.5,-3);
+    const len=from.distanceTo(to);
+    const cone=new THREE.Mesh(new THREE.ConeGeometry(r,len,24,1,true),beamMat(c));
+    cone.position.copy(from.clone().lerp(to,.5));
+    cone.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),from.clone().sub(to).normalize());
+    scene.add(cone);
+  }
+  beam(L1,0xfff0d0,3.6); beam(L2,0xcfe2ff,3.0);
+
+  /* ---------- prašina ---------- */
+  const N=180, dp=new Float32Array(N*3);
+  for(let i=0;i<N;i++){dp[i*3]=(Math.random()-.5)*16;dp[i*3+1]=(Math.random()-.5)*10;dp[i*3+2]=(Math.random()-.5)*8;}
+  const dg=new THREE.BufferGeometry(); dg.setAttribute("position",new THREE.BufferAttribute(dp,3));
+  const dots=new THREE.Points(dg,new THREE.PointsMaterial({color:0xfff4dc,size:.035,transparent:true,opacity:.55,depthWrite:false,blending:THREE.AdditiveBlending}));
+  scene.add(dots);
+
+  function resize(){
+    const w=stage.clientWidth, h=stage.clientHeight;
+    renderer.setSize(w,h,false); camera.aspect=w/h;
+    stacked = w/h<1; layout();
+    camera.position.z = stacked ? 21 : 14;
+    camera.updateProjectionMatrix();
+  }
+  resize(); addEventListener("resize",resize);
+
+  let visible=true, t0=performance.now();
+  new IntersectionObserver(e=>{visible=e[0].isIntersecting;},{threshold:0}).observe(stage);
+  let last=0;
+  function frame(now){
+    const t=(now-t0)/1000;
+    if(visible && now-last>33){ last=now;
+      flutter(reduce?0.8:t);
+      dots.rotation.y=reduce?0:t*0.02; dots.position.y=reduce?0:Math.sin(t*0.2)*0.3;
+      renderer.render(scene,camera);
+    }
+    if(!reduce) requestAnimationFrame(frame);
+  }
+  flutter(0.8); renderer.render(scene,camera);
+  let drew=false;
+  try{
+    const gl=renderer.getContext(), W2=gl.drawingBufferWidth, H2=gl.drawingBufferHeight, px=new Uint8Array(4);
+    for(const [fx,fy] of [[.27,.5],[.73,.5],[.5,.3],[.5,.7]]){
+      gl.readPixels(Math.floor(W2*fx),Math.floor(H2*fy),1,1,gl.RGBA,gl.UNSIGNED_BYTE,px);
+      if(px[0]+px[1]+px[2]>90){ drew=true; break; }
+    }
+  }catch(e){ drew=true; }
+  if(!drew){ renderer.dispose(); return; }
+  cv.addEventListener("webglcontextlost",()=>stage.classList.remove("is3d"));
+  stage.classList.add("is3d");
+  requestAnimationFrame(frame);
+}
+
+
+
+
+(function(){
+  const b=document.getElementById("menuBtn"), n=document.getElementById("mainNav"); if(!b||!n) return;
+  const set=o=>{ n.classList.toggle("open",o); b.setAttribute("aria-expanded",o); b.setAttribute("aria-label",o?"Zatvori meni":"Otvori meni"); };
+  b.addEventListener("click",()=>set(!n.classList.contains("open")));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{
+    const id=a.getAttribute("href").slice(1), t=id&&document.getElementById(id);
+    if(!t) return;
+    e.preventDefault(); set(false);
+    const y=t.getBoundingClientRect().top+window.pageYOffset-(document.querySelector("header")?.offsetHeight||0)-8;
+    window.scrollTo({top:y,behavior:"smooth"});
+  }));
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape") set(false); });
+})();
+(function(){
+  const crest=document.querySelector(".crest-sm")?.src;
+  document.querySelectorAll("img[data-crest]").forEach(i=>{ if(crest) i.src=crest; });
+  const fine=matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".mcard").forEach(c=>{
+    c.addEventListener("click",()=>{
+      const inner=c.querySelector(".mc-inner");
+      inner.style.transition="transform .22s ease-in"; c.style.setProperty("--sxk","0");
+      setTimeout(()=>{ c.classList.toggle("flipped"); inner.style.transition="transform .22s ease-out"; c.style.setProperty("--sxk","1"); },220);
+      setTimeout(()=>{ inner.style.transition=""; },480);
+    });
+    if(!fine) return;
+    c.addEventListener("pointermove",e=>{
+      const r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+      c.style.setProperty("--ry",((x-.5)*16)+"deg"); c.style.setProperty("--rx",((.5-y)*12)+"deg");
+      c.style.setProperty("--sx",(120-x*140)+"%");
+      c.querySelector(".mc-inner").style.transition="transform .12s";
+    });
+    c.addEventListener("pointerleave",()=>{
+      c.style.setProperty("--ry","0deg"); c.style.setProperty("--rx","0deg"); c.style.setProperty("--sx","120%");
+      c.querySelector(".mc-inner").style.transition="";
+    });
+  });
+})();
+(function(){
+  const b=document.getElementById("copyAcc"); if(!b) return;
+  b.addEventListener("click",async()=>{
+    try{ await navigator.clipboard.writeText(document.getElementById("accNo").textContent.trim()); b.textContent="Kopirano"; }
+    catch(e){ b.textContent="Označi i kopiraj ručno"; }
+    setTimeout(()=>b.textContent="Kopiraj broj računa",2500);
+  });
+})();
+(function(){
+  const crest=document.querySelector(".crest-sm")?.src;
+  if(crest){const h=document.querySelector(".hero-crest");if(h)h.src=crest;const f=document.getElementById("fav");if(f)f.href=crest;}
+  const stage=document.getElementById("kitStage"); if(!stage) return;
+  let loaded=false;
+  const load=()=>{ if(loaded) return; loaded=true;
+    const sc=document.createElement("script");
+    sc.src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+    sc.onload=()=>{ try{ startKit3D(); }catch(e){} };
+    document.head.appendChild(sc);
+  };
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(e=>{ if(e[0].isIntersecting){ io.disconnect(); load(); } },{rootMargin:"300px"});
+    io.observe(stage);
+  } else load();
+})();
+</script>
+</body>
+</html>
